@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { rmdirSync, existsSync } from 'fs-extra'
+import { rmSync, existsSync } from 'fs-extra'
 import config from './config'
 import { downloadMedia, getQueryParams } from './tools'
 
@@ -84,7 +84,7 @@ const main = async () => {
         const video = initialState.note.noteDetailMap[noteId].note?.video?.media?.stream.h264[0].masterUrl
         const path = `media/${noteId}`
         if (existsSync(path)) {
-          rmdirSync(path, { recursive: true })
+          rmSync(path, { recursive: true })
         }
         if (video) {
           await downloadVideo(video, path)
