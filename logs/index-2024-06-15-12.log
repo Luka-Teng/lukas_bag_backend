@@ -1,0 +1,973 @@
+{
+  message: '\x1B[31m<ref *2> IncomingMessage {\x1B[39m\n' +
+    '\x1B[31m  _readableState: ReadableState {\x1B[39m\n' +
+    '\x1B[31m    objectMode: false,\x1B[39m\n' +
+    '\x1B[31m    highWaterMark: 16384,\x1B[39m\n' +
+    '\x1B[31m    buffer: BufferList { head: null, tail: null, length: 0 },\x1B[39m\n' +
+    '\x1B[31m    length: 0,\x1B[39m\n' +
+    '\x1B[31m    pipes: [],\x1B[39m\n' +
+    '\x1B[31m    flowing: null,\x1B[39m\n' +
+    '\x1B[31m    ended: false,\x1B[39m\n' +
+    '\x1B[31m    endEmitted: false,\x1B[39m\n' +
+    '\x1B[31m    reading: false,\x1B[39m\n' +
+    '\x1B[31m    constructed: true,\x1B[39m\n' +
+    '\x1B[31m    sync: true,\x1B[39m\n' +
+    '\x1B[31m    needReadable: false,\x1B[39m\n' +
+    '\x1B[31m    emittedReadable: false,\x1B[39m\n' +
+    '\x1B[31m    readableListening: false,\x1B[39m\n' +
+    '\x1B[31m    resumeScheduled: false,\x1B[39m\n' +
+    '\x1B[31m    errorEmitted: false,\x1B[39m\n' +
+    '\x1B[31m    emitClose: true,\x1B[39m\n' +
+    '\x1B[31m    autoDestroy: true,\x1B[39m\n' +
+    '\x1B[31m    destroyed: false,\x1B[39m\n' +
+    '\x1B[31m    errored: null,\x1B[39m\n' +
+    '\x1B[31m    closed: false,\x1B[39m\n' +
+    '\x1B[31m    closeEmitted: false,\x1B[39m\n' +
+    "\x1B[31m    defaultEncoding: 'utf8',\x1B[39m\n" +
+    '\x1B[31m    awaitDrainWriters: null,\x1B[39m\n' +
+    '\x1B[31m    multiAwaitDrain: false,\x1B[39m\n' +
+    '\x1B[31m    readingMore: true,\x1B[39m\n' +
+    '\x1B[31m    dataEmitted: false,\x1B[39m\n' +
+    '\x1B[31m    decoder: null,\x1B[39m\n' +
+    '\x1B[31m    encoding: null,\x1B[39m\n' +
+    '\x1B[31m    [Symbol(kPaused)]: null\x1B[39m\n' +
+    '\x1B[31m  },\x1B[39m\n' +
+    '\x1B[31m  _events: [Object: null prototype] {},\x1B[39m\n' +
+    '\x1B[31m  _eventsCount: 0,\x1B[39m\n' +
+    '\x1B[31m  _maxListeners: undefined,\x1B[39m\n' +
+    '\x1B[31m  socket: <ref *1> Socket {\x1B[39m\n' +
+    '\x1B[31m    connecting: false,\x1B[39m\n' +
+    '\x1B[31m    _hadError: false,\x1B[39m\n' +
+    '\x1B[31m    _parent: null,\x1B[39m\n' +
+    '\x1B[31m    _host: null,\x1B[39m\n' +
+    '\x1B[31m    _closeAfterHandlingError: false,\x1B[39m\n' +
+    '\x1B[31m    _readableState: ReadableState {\x1B[39m\n' +
+    '\x1B[31m      objectMode: false,\x1B[39m\n' +
+    '\x1B[31m      highWaterMark: 16384,\x1B[39m\n' +
+    '\x1B[31m      buffer: BufferList { head: null, tail: null, length: 0 },\x1B[39m\n' +
+    '\x1B[31m      length: 0,\x1B[39m\n' +
+    '\x1B[31m      pipes: [],\x1B[39m\n' +
+    '\x1B[31m      flowing: true,\x1B[39m\n' +
+    '\x1B[31m      ended: false,\x1B[39m\n' +
+    '\x1B[31m      endEmitted: false,\x1B[39m\n' +
+    '\x1B[31m      reading: true,\x1B[39m\n' +
+    '\x1B[31m      constructed: true,\x1B[39m\n' +
+    '\x1B[31m      sync: false,\x1B[39m\n' +
+    '\x1B[31m      needReadable: true,\x1B[39m\n' +
+    '\x1B[31m      emittedReadable: false,\x1B[39m\n' +
+    '\x1B[31m      readableListening: false,\x1B[39m\n' +
+    '\x1B[31m      resumeScheduled: false,\x1B[39m\n' +
+    '\x1B[31m      errorEmitted: false,\x1B[39m\n' +
+    '\x1B[31m      emitClose: false,\x1B[39m\n' +
+    '\x1B[31m      autoDestroy: true,\x1B[39m\n' +
+    '\x1B[31m      destroyed: false,\x1B[39m\n' +
+    '\x1B[31m      errored: null,\x1B[39m\n' +
+    '\x1B[31m      closed: false,\x1B[39m\n' +
+    '\x1B[31m      closeEmitted: false,\x1B[39m\n' +
+    "\x1B[31m      defaultEncoding: 'utf8',\x1B[39m\n" +
+    '\x1B[31m      awaitDrainWriters: null,\x1B[39m\n' +
+    '\x1B[31m      multiAwaitDrain: false,\x1B[39m\n' +
+    '\x1B[31m      readingMore: false,\x1B[39m\n' +
+    '\x1B[31m      dataEmitted: false,\x1B[39m\n' +
+    '\x1B[31m      decoder: null,\x1B[39m\n' +
+    '\x1B[31m      encoding: null,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kPaused)]: false\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    _events: [Object: null prototype] {\x1B[39m\n' +
+    '\x1B[31m      end: [Array],\x1B[39m\n' +
+    '\x1B[31m      timeout: [Function: socketOnTimeout],\x1B[39m\n' +
+    '\x1B[31m      data: [Function: bound socketOnData],\x1B[39m\n' +
+    '\x1B[31m      error: [Function: socketOnError],\x1B[39m\n' +
+    '\x1B[31m      close: [Array],\x1B[39m\n' +
+    '\x1B[31m      drain: [Function: bound socketOnDrain],\x1B[39m\n' +
+    '\x1B[31m      resume: [Function: onSocketResume],\x1B[39m\n' +
+    '\x1B[31m      pause: [Function: onSocketPause]\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    _eventsCount: 8,\x1B[39m\n' +
+    '\x1B[31m    _maxListeners: undefined,\x1B[39m\n' +
+    '\x1B[31m    _writableState: WritableState {\x1B[39m\n' +
+    '\x1B[31m      objectMode: false,\x1B[39m\n' +
+    '\x1B[31m      highWaterMark: 16384,\x1B[39m\n' +
+    '\x1B[31m      finalCalled: false,\x1B[39m\n' +
+    '\x1B[31m      needDrain: false,\x1B[39m\n' +
+    '\x1B[31m      ending: false,\x1B[39m\n' +
+    '\x1B[31m      ended: false,\x1B[39m\n' +
+    '\x1B[31m      finished: false,\x1B[39m\n' +
+    '\x1B[31m      destroyed: false,\x1B[39m\n' +
+    '\x1B[31m      decodeStrings: false,\x1B[39m\n' +
+    "\x1B[31m      defaultEncoding: 'utf8',\x1B[39m\n" +
+    '\x1B[31m      length: 0,\x1B[39m\n' +
+    '\x1B[31m      writing: false,\x1B[39m\n' +
+    '\x1B[31m      corked: 0,\x1B[39m\n' +
+    '\x1B[31m      sync: true,\x1B[39m\n' +
+    '\x1B[31m      bufferProcessing: false,\x1B[39m\n' +
+    '\x1B[31m      onwrite: [Function: bound onwrite],\x1B[39m\n' +
+    '\x1B[31m      writecb: null,\x1B[39m\n' +
+    '\x1B[31m      writelen: 0,\x1B[39m\n' +
+    '\x1B[31m      afterWriteTickInfo: null,\x1B[39m\n' +
+    '\x1B[31m      buffered: [],\x1B[39m\n' +
+    '\x1B[31m      bufferedIndex: 0,\x1B[39m\n' +
+    '\x1B[31m      allBuffers: true,\x1B[39m\n' +
+    '\x1B[31m      allNoop: true,\x1B[39m\n' +
+    '\x1B[31m      pendingcb: 0,\x1B[39m\n' +
+    '\x1B[31m      constructed: true,\x1B[39m\n' +
+    '\x1B[31m      prefinished: false,\x1B[39m\n' +
+    '\x1B[31m      errorEmitted: false,\x1B[39m\n' +
+    '\x1B[31m      emitClose: false,\x1B[39m\n' +
+    '\x1B[31m      autoDestroy: true,\x1B[39m\n' +
+    '\x1B[31m      errored: null,\x1B[39m\n' +
+    '\x1B[31m      closed: false,\x1B[39m\n' +
+    '\x1B[31m      closeEmitted: false,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kOnFinished)]: []\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    allowHalfOpen: true,\x1B[39m\n' +
+    '\x1B[31m    _sockname: null,\x1B[39m\n' +
+    '\x1B[31m    _pendingData: null,\x1B[39m\n' +
+    "\x1B[31m    _pendingEncoding: '',\x1B[39m\n" +
+    '\x1B[31m    server: Server {\x1B[39m\n' +
+    '\x1B[31m      maxHeaderSize: undefined,\x1B[39m\n' +
+    '\x1B[31m      insecureHTTPParser: undefined,\x1B[39m\n' +
+    '\x1B[31m      requestTimeout: 300000,\x1B[39m\n' +
+    '\x1B[31m      headersTimeout: 60000,\x1B[39m\n' +
+    '\x1B[31m      keepAliveTimeout: 5000,\x1B[39m\n' +
+    '\x1B[31m      connectionsCheckingInterval: 30000,\x1B[39m\n' +
+    '\x1B[31m      joinDuplicateHeaders: undefined,\x1B[39m\n' +
+    '\x1B[31m      rejectNonStandardBodyWrites: false,\x1B[39m\n' +
+    '\x1B[31m      _events: [Object: null prototype],\x1B[39m\n' +
+    '\x1B[31m      _eventsCount: 2,\x1B[39m\n' +
+    '\x1B[31m      _maxListeners: undefined,\x1B[39m\n' +
+    '\x1B[31m      _connections: 1,\x1B[39m\n' +
+    '\x1B[31m      _handle: [TCP],\x1B[39m\n' +
+    '\x1B[31m      _usingWorkers: false,\x1B[39m\n' +
+    '\x1B[31m      _workers: [],\x1B[39m\n' +
+    '\x1B[31m      _unref: false,\x1B[39m\n' +
+    '\x1B[31m      allowHalfOpen: true,\x1B[39m\n' +
+    '\x1B[31m      pauseOnConnect: false,\x1B[39m\n' +
+    '\x1B[31m      noDelay: true,\x1B[39m\n' +
+    '\x1B[31m      keepAlive: false,\x1B[39m\n' +
+    '\x1B[31m      keepAliveInitialDelay: 0,\x1B[39m\n' +
+    '\x1B[31m      highWaterMark: 16384,\x1B[39m\n' +
+    '\x1B[31m      httpAllowHalfOpen: false,\x1B[39m\n' +
+    '\x1B[31m      timeout: 0,\x1B[39m\n' +
+    '\x1B[31m      maxHeadersCount: null,\x1B[39m\n' +
+    '\x1B[31m      maxRequestsPerSocket: 0,\x1B[39m\n' +
+    "\x1B[31m      _connectionKey: '6::::3000',\x1B[39m\n" +
+    '\x1B[31m      [Symbol(IncomingMessage)]: [Function: IncomingMessage],\x1B[39m\n' +
+    '\x1B[31m      [Symbol(ServerResponse)]: [Function: ServerResponse],\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kCapture)]: false,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(async_id_symbol)]: 9,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(http.server.connections)]: ConnectionsList {},\x1B[39m\n' +
+    '\x1B[31m      [Symbol(http.server.connectionsCheckingInterval)]: Timeout {\x1B[39m\n' +
+    '\x1B[31m        _idleTimeout: 30000,\x1B[39m\n' +
+    '\x1B[31m        _idlePrev: [TimersList],\x1B[39m\n' +
+    '\x1B[31m        _idleNext: [TimersList],\x1B[39m\n' +
+    '\x1B[31m        _idleStart: 120130,\x1B[39m\n' +
+    '\x1B[31m        _onTimeout: [Function: bound checkConnections],\x1B[39m\n' +
+    '\x1B[31m        _timerArgs: undefined,\x1B[39m\n' +
+    '\x1B[31m        _repeat: 30000,\x1B[39m\n' +
+    '\x1B[31m        _destroyed: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(refed)]: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(kHasPrimitive)]: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(asyncId)]: 8,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(triggerId)]: 1\x1B[39m\n' +
+    '\x1B[31m      },\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kUniqueHeaders)]: null\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    _server: Server {\x1B[39m\n' +
+    '\x1B[31m      maxHeaderSize: undefined,\x1B[39m\n' +
+    '\x1B[31m      insecureHTTPParser: undefined,\x1B[39m\n' +
+    '\x1B[31m      requestTimeout: 300000,\x1B[39m\n' +
+    '\x1B[31m      headersTimeout: 60000,\x1B[39m\n' +
+    '\x1B[31m      keepAliveTimeout: 5000,\x1B[39m\n' +
+    '\x1B[31m      connectionsCheckingInterval: 30000,\x1B[39m\n' +
+    '\x1B[31m      joinDuplicateHeaders: undefined,\x1B[39m\n' +
+    '\x1B[31m      rejectNonStandardBodyWrites: false,\x1B[39m\n' +
+    '\x1B[31m      _events: [Object: null prototype],\x1B[39m\n' +
+    '\x1B[31m      _eventsCount: 2,\x1B[39m\n' +
+    '\x1B[31m      _maxListeners: undefined,\x1B[39m\n' +
+    '\x1B[31m      _connections: 1,\x1B[39m\n' +
+    '\x1B[31m      _handle: [TCP],\x1B[39m\n' +
+    '\x1B[31m      _usingWorkers: false,\x1B[39m\n' +
+    '\x1B[31m      _workers: [],\x1B[39m\n' +
+    '\x1B[31m      _unref: false,\x1B[39m\n' +
+    '\x1B[31m      allowHalfOpen: true,\x1B[39m\n' +
+    '\x1B[31m      pauseOnConnect: false,\x1B[39m\n' +
+    '\x1B[31m      noDelay: true,\x1B[39m\n' +
+    '\x1B[31m      keepAlive: false,\x1B[39m\n' +
+    '\x1B[31m      keepAliveInitialDelay: 0,\x1B[39m\n' +
+    '\x1B[31m      highWaterMark: 16384,\x1B[39m\n' +
+    '\x1B[31m      httpAllowHalfOpen: false,\x1B[39m\n' +
+    '\x1B[31m      timeout: 0,\x1B[39m\n' +
+    '\x1B[31m      maxHeadersCount: null,\x1B[39m\n' +
+    '\x1B[31m      maxRequestsPerSocket: 0,\x1B[39m\n' +
+    "\x1B[31m      _connectionKey: '6::::3000',\x1B[39m\n" +
+    '\x1B[31m      [Symbol(IncomingMessage)]: [Function: IncomingMessage],\x1B[39m\n' +
+    '\x1B[31m      [Symbol(ServerResponse)]: [Function: ServerResponse],\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kCapture)]: false,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(async_id_symbol)]: 9,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(http.server.connections)]: ConnectionsList {},\x1B[39m\n' +
+    '\x1B[31m      [Symbol(http.server.connectionsCheckingInterval)]: Timeout {\x1B[39m\n' +
+    '\x1B[31m        _idleTimeout: 30000,\x1B[39m\n' +
+    '\x1B[31m        _idlePrev: [TimersList],\x1B[39m\n' +
+    '\x1B[31m        _idleNext: [TimersList],\x1B[39m\n' +
+    '\x1B[31m        _idleStart: 120130,\x1B[39m\n' +
+    '\x1B[31m        _onTimeout: [Function: bound checkConnections],\x1B[39m\n' +
+    '\x1B[31m        _timerArgs: undefined,\x1B[39m\n' +
+    '\x1B[31m        _repeat: 30000,\x1B[39m\n' +
+    '\x1B[31m        _destroyed: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(refed)]: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(kHasPrimitive)]: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(asyncId)]: 8,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(triggerId)]: 1\x1B[39m\n' +
+    '\x1B[31m      },\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kUniqueHeaders)]: null\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    parser: HTTPParser {\x1B[39m\n' +
+    "\x1B[31m      '0': null,\x1B[39m\n" +
+    "\x1B[31m      '1': [Function: parserOnHeaders],\x1B[39m\n" +
+    "\x1B[31m      '2': [Function: parserOnHeadersComplete],\x1B[39m\n" +
+    "\x1B[31m      '3': [Function: parserOnBody],\x1B[39m\n" +
+    "\x1B[31m      '4': [Function: parserOnMessageComplete],\x1B[39m\n" +
+    "\x1B[31m      '5': [Function: bound onParserExecute],\x1B[39m\n" +
+    "\x1B[31m      '6': [Function: bound onParserTimeout],\x1B[39m\n" +
+    '\x1B[31m      _headers: [],\x1B[39m\n' +
+    "\x1B[31m      _url: '',\x1B[39m\n" +
+    '\x1B[31m      socket: [Circular *1],\x1B[39m\n' +
+    '\x1B[31m      incoming: [Circular *2],\x1B[39m\n' +
+    '\x1B[31m      outgoing: null,\x1B[39m\n' +
+    '\x1B[31m      maxHeaderPairs: 2000,\x1B[39m\n' +
+    '\x1B[31m      _consumed: true,\x1B[39m\n' +
+    '\x1B[31m      onIncoming: [Function: bound parserOnIncoming],\x1B[39m\n' +
+    '\x1B[31m      [Symbol(resource_symbol)]: [HTTPServerAsyncResource]\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    on: [Function: socketListenerWrap],\x1B[39m\n' +
+    '\x1B[31m    addListener: [Function: socketListenerWrap],\x1B[39m\n' +
+    '\x1B[31m    prependListener: [Function: socketListenerWrap],\x1B[39m\n' +
+    '\x1B[31m    setEncoding: [Function: socketSetEncoding],\x1B[39m\n' +
+    '\x1B[31m    _paused: false,\x1B[39m\n' +
+    '\x1B[31m    _httpMessage: ServerResponse {\x1B[39m\n' +
+    '\x1B[31m      _events: [Object: null prototype],\x1B[39m\n' +
+    '\x1B[31m      _eventsCount: 1,\x1B[39m\n' +
+    '\x1B[31m      _maxListeners: undefined,\x1B[39m\n' +
+    '\x1B[31m      outputData: [],\x1B[39m\n' +
+    '\x1B[31m      outputSize: 0,\x1B[39m\n' +
+    '\x1B[31m      writable: true,\x1B[39m\n' +
+    '\x1B[31m      destroyed: false,\x1B[39m\n' +
+    '\x1B[31m      _last: false,\x1B[39m\n' +
+    '\x1B[31m      chunkedEncoding: false,\x1B[39m\n' +
+    '\x1B'... 18443 more characters,
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2024-06-15 12:11:13'
+}
+{
+  message: '\x1B[31m<ref *2> IncomingMessage {\x1B[39m\n' +
+    '\x1B[31m  _readableState: ReadableState {\x1B[39m\n' +
+    '\x1B[31m    objectMode: false,\x1B[39m\n' +
+    '\x1B[31m    highWaterMark: 16384,\x1B[39m\n' +
+    '\x1B[31m    buffer: BufferList { head: null, tail: null, length: 0 },\x1B[39m\n' +
+    '\x1B[31m    length: 0,\x1B[39m\n' +
+    '\x1B[31m    pipes: [],\x1B[39m\n' +
+    '\x1B[31m    flowing: null,\x1B[39m\n' +
+    '\x1B[31m    ended: false,\x1B[39m\n' +
+    '\x1B[31m    endEmitted: false,\x1B[39m\n' +
+    '\x1B[31m    reading: false,\x1B[39m\n' +
+    '\x1B[31m    constructed: true,\x1B[39m\n' +
+    '\x1B[31m    sync: true,\x1B[39m\n' +
+    '\x1B[31m    needReadable: false,\x1B[39m\n' +
+    '\x1B[31m    emittedReadable: false,\x1B[39m\n' +
+    '\x1B[31m    readableListening: false,\x1B[39m\n' +
+    '\x1B[31m    resumeScheduled: false,\x1B[39m\n' +
+    '\x1B[31m    errorEmitted: false,\x1B[39m\n' +
+    '\x1B[31m    emitClose: true,\x1B[39m\n' +
+    '\x1B[31m    autoDestroy: true,\x1B[39m\n' +
+    '\x1B[31m    destroyed: false,\x1B[39m\n' +
+    '\x1B[31m    errored: null,\x1B[39m\n' +
+    '\x1B[31m    closed: false,\x1B[39m\n' +
+    '\x1B[31m    closeEmitted: false,\x1B[39m\n' +
+    "\x1B[31m    defaultEncoding: 'utf8',\x1B[39m\n" +
+    '\x1B[31m    awaitDrainWriters: null,\x1B[39m\n' +
+    '\x1B[31m    multiAwaitDrain: false,\x1B[39m\n' +
+    '\x1B[31m    readingMore: true,\x1B[39m\n' +
+    '\x1B[31m    dataEmitted: false,\x1B[39m\n' +
+    '\x1B[31m    decoder: null,\x1B[39m\n' +
+    '\x1B[31m    encoding: null,\x1B[39m\n' +
+    '\x1B[31m    [Symbol(kPaused)]: null\x1B[39m\n' +
+    '\x1B[31m  },\x1B[39m\n' +
+    '\x1B[31m  _events: [Object: null prototype] {},\x1B[39m\n' +
+    '\x1B[31m  _eventsCount: 0,\x1B[39m\n' +
+    '\x1B[31m  _maxListeners: undefined,\x1B[39m\n' +
+    '\x1B[31m  socket: <ref *1> Socket {\x1B[39m\n' +
+    '\x1B[31m    connecting: false,\x1B[39m\n' +
+    '\x1B[31m    _hadError: false,\x1B[39m\n' +
+    '\x1B[31m    _parent: null,\x1B[39m\n' +
+    '\x1B[31m    _host: null,\x1B[39m\n' +
+    '\x1B[31m    _closeAfterHandlingError: false,\x1B[39m\n' +
+    '\x1B[31m    _readableState: ReadableState {\x1B[39m\n' +
+    '\x1B[31m      objectMode: false,\x1B[39m\n' +
+    '\x1B[31m      highWaterMark: 16384,\x1B[39m\n' +
+    '\x1B[31m      buffer: BufferList { head: null, tail: null, length: 0 },\x1B[39m\n' +
+    '\x1B[31m      length: 0,\x1B[39m\n' +
+    '\x1B[31m      pipes: [],\x1B[39m\n' +
+    '\x1B[31m      flowing: true,\x1B[39m\n' +
+    '\x1B[31m      ended: false,\x1B[39m\n' +
+    '\x1B[31m      endEmitted: false,\x1B[39m\n' +
+    '\x1B[31m      reading: true,\x1B[39m\n' +
+    '\x1B[31m      constructed: true,\x1B[39m\n' +
+    '\x1B[31m      sync: false,\x1B[39m\n' +
+    '\x1B[31m      needReadable: true,\x1B[39m\n' +
+    '\x1B[31m      emittedReadable: false,\x1B[39m\n' +
+    '\x1B[31m      readableListening: false,\x1B[39m\n' +
+    '\x1B[31m      resumeScheduled: false,\x1B[39m\n' +
+    '\x1B[31m      errorEmitted: false,\x1B[39m\n' +
+    '\x1B[31m      emitClose: false,\x1B[39m\n' +
+    '\x1B[31m      autoDestroy: true,\x1B[39m\n' +
+    '\x1B[31m      destroyed: false,\x1B[39m\n' +
+    '\x1B[31m      errored: null,\x1B[39m\n' +
+    '\x1B[31m      closed: false,\x1B[39m\n' +
+    '\x1B[31m      closeEmitted: false,\x1B[39m\n' +
+    "\x1B[31m      defaultEncoding: 'utf8',\x1B[39m\n" +
+    '\x1B[31m      awaitDrainWriters: null,\x1B[39m\n' +
+    '\x1B[31m      multiAwaitDrain: false,\x1B[39m\n' +
+    '\x1B[31m      readingMore: false,\x1B[39m\n' +
+    '\x1B[31m      dataEmitted: false,\x1B[39m\n' +
+    '\x1B[31m      decoder: null,\x1B[39m\n' +
+    '\x1B[31m      encoding: null,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kPaused)]: false\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    _events: [Object: null prototype] {\x1B[39m\n' +
+    '\x1B[31m      end: [Array],\x1B[39m\n' +
+    '\x1B[31m      timeout: [Function: socketOnTimeout],\x1B[39m\n' +
+    '\x1B[31m      data: [Function: bound socketOnData],\x1B[39m\n' +
+    '\x1B[31m      error: [Function: socketOnError],\x1B[39m\n' +
+    '\x1B[31m      close: [Array],\x1B[39m\n' +
+    '\x1B[31m      drain: [Function: bound socketOnDrain],\x1B[39m\n' +
+    '\x1B[31m      resume: [Function: onSocketResume],\x1B[39m\n' +
+    '\x1B[31m      pause: [Function: onSocketPause]\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    _eventsCount: 8,\x1B[39m\n' +
+    '\x1B[31m    _maxListeners: undefined,\x1B[39m\n' +
+    '\x1B[31m    _writableState: WritableState {\x1B[39m\n' +
+    '\x1B[31m      objectMode: false,\x1B[39m\n' +
+    '\x1B[31m      highWaterMark: 16384,\x1B[39m\n' +
+    '\x1B[31m      finalCalled: false,\x1B[39m\n' +
+    '\x1B[31m      needDrain: false,\x1B[39m\n' +
+    '\x1B[31m      ending: false,\x1B[39m\n' +
+    '\x1B[31m      ended: false,\x1B[39m\n' +
+    '\x1B[31m      finished: false,\x1B[39m\n' +
+    '\x1B[31m      destroyed: false,\x1B[39m\n' +
+    '\x1B[31m      decodeStrings: false,\x1B[39m\n' +
+    "\x1B[31m      defaultEncoding: 'utf8',\x1B[39m\n" +
+    '\x1B[31m      length: 0,\x1B[39m\n' +
+    '\x1B[31m      writing: false,\x1B[39m\n' +
+    '\x1B[31m      corked: 0,\x1B[39m\n' +
+    '\x1B[31m      sync: true,\x1B[39m\n' +
+    '\x1B[31m      bufferProcessing: false,\x1B[39m\n' +
+    '\x1B[31m      onwrite: [Function: bound onwrite],\x1B[39m\n' +
+    '\x1B[31m      writecb: null,\x1B[39m\n' +
+    '\x1B[31m      writelen: 0,\x1B[39m\n' +
+    '\x1B[31m      afterWriteTickInfo: null,\x1B[39m\n' +
+    '\x1B[31m      buffered: [],\x1B[39m\n' +
+    '\x1B[31m      bufferedIndex: 0,\x1B[39m\n' +
+    '\x1B[31m      allBuffers: true,\x1B[39m\n' +
+    '\x1B[31m      allNoop: true,\x1B[39m\n' +
+    '\x1B[31m      pendingcb: 0,\x1B[39m\n' +
+    '\x1B[31m      constructed: true,\x1B[39m\n' +
+    '\x1B[31m      prefinished: false,\x1B[39m\n' +
+    '\x1B[31m      errorEmitted: false,\x1B[39m\n' +
+    '\x1B[31m      emitClose: false,\x1B[39m\n' +
+    '\x1B[31m      autoDestroy: true,\x1B[39m\n' +
+    '\x1B[31m      errored: null,\x1B[39m\n' +
+    '\x1B[31m      closed: false,\x1B[39m\n' +
+    '\x1B[31m      closeEmitted: false,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kOnFinished)]: []\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    allowHalfOpen: true,\x1B[39m\n' +
+    '\x1B[31m    _sockname: null,\x1B[39m\n' +
+    '\x1B[31m    _pendingData: null,\x1B[39m\n' +
+    "\x1B[31m    _pendingEncoding: '',\x1B[39m\n" +
+    '\x1B[31m    server: Server {\x1B[39m\n' +
+    '\x1B[31m      maxHeaderSize: undefined,\x1B[39m\n' +
+    '\x1B[31m      insecureHTTPParser: undefined,\x1B[39m\n' +
+    '\x1B[31m      requestTimeout: 300000,\x1B[39m\n' +
+    '\x1B[31m      headersTimeout: 60000,\x1B[39m\n' +
+    '\x1B[31m      keepAliveTimeout: 5000,\x1B[39m\n' +
+    '\x1B[31m      connectionsCheckingInterval: 30000,\x1B[39m\n' +
+    '\x1B[31m      joinDuplicateHeaders: undefined,\x1B[39m\n' +
+    '\x1B[31m      rejectNonStandardBodyWrites: false,\x1B[39m\n' +
+    '\x1B[31m      _events: [Object: null prototype],\x1B[39m\n' +
+    '\x1B[31m      _eventsCount: 2,\x1B[39m\n' +
+    '\x1B[31m      _maxListeners: undefined,\x1B[39m\n' +
+    '\x1B[31m      _connections: 1,\x1B[39m\n' +
+    '\x1B[31m      _handle: [TCP],\x1B[39m\n' +
+    '\x1B[31m      _usingWorkers: false,\x1B[39m\n' +
+    '\x1B[31m      _workers: [],\x1B[39m\n' +
+    '\x1B[31m      _unref: false,\x1B[39m\n' +
+    '\x1B[31m      allowHalfOpen: true,\x1B[39m\n' +
+    '\x1B[31m      pauseOnConnect: false,\x1B[39m\n' +
+    '\x1B[31m      noDelay: true,\x1B[39m\n' +
+    '\x1B[31m      keepAlive: false,\x1B[39m\n' +
+    '\x1B[31m      keepAliveInitialDelay: 0,\x1B[39m\n' +
+    '\x1B[31m      highWaterMark: 16384,\x1B[39m\n' +
+    '\x1B[31m      httpAllowHalfOpen: false,\x1B[39m\n' +
+    '\x1B[31m      timeout: 0,\x1B[39m\n' +
+    '\x1B[31m      maxHeadersCount: null,\x1B[39m\n' +
+    '\x1B[31m      maxRequestsPerSocket: 0,\x1B[39m\n' +
+    "\x1B[31m      _connectionKey: '6::::3000',\x1B[39m\n" +
+    '\x1B[31m      [Symbol(IncomingMessage)]: [Function: IncomingMessage],\x1B[39m\n' +
+    '\x1B[31m      [Symbol(ServerResponse)]: [Function: ServerResponse],\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kCapture)]: false,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(async_id_symbol)]: 9,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(http.server.connections)]: ConnectionsList {},\x1B[39m\n' +
+    '\x1B[31m      [Symbol(http.server.connectionsCheckingInterval)]: Timeout {\x1B[39m\n' +
+    '\x1B[31m        _idleTimeout: 30000,\x1B[39m\n' +
+    '\x1B[31m        _idlePrev: [TimersList],\x1B[39m\n' +
+    '\x1B[31m        _idleNext: [TimersList],\x1B[39m\n' +
+    '\x1B[31m        _idleStart: 127,\x1B[39m\n' +
+    '\x1B[31m        _onTimeout: [Function: bound checkConnections],\x1B[39m\n' +
+    '\x1B[31m        _timerArgs: undefined,\x1B[39m\n' +
+    '\x1B[31m        _repeat: 30000,\x1B[39m\n' +
+    '\x1B[31m        _destroyed: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(refed)]: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(kHasPrimitive)]: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(asyncId)]: 8,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(triggerId)]: 1\x1B[39m\n' +
+    '\x1B[31m      },\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kUniqueHeaders)]: null\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    _server: Server {\x1B[39m\n' +
+    '\x1B[31m      maxHeaderSize: undefined,\x1B[39m\n' +
+    '\x1B[31m      insecureHTTPParser: undefined,\x1B[39m\n' +
+    '\x1B[31m      requestTimeout: 300000,\x1B[39m\n' +
+    '\x1B[31m      headersTimeout: 60000,\x1B[39m\n' +
+    '\x1B[31m      keepAliveTimeout: 5000,\x1B[39m\n' +
+    '\x1B[31m      connectionsCheckingInterval: 30000,\x1B[39m\n' +
+    '\x1B[31m      joinDuplicateHeaders: undefined,\x1B[39m\n' +
+    '\x1B[31m      rejectNonStandardBodyWrites: false,\x1B[39m\n' +
+    '\x1B[31m      _events: [Object: null prototype],\x1B[39m\n' +
+    '\x1B[31m      _eventsCount: 2,\x1B[39m\n' +
+    '\x1B[31m      _maxListeners: undefined,\x1B[39m\n' +
+    '\x1B[31m      _connections: 1,\x1B[39m\n' +
+    '\x1B[31m      _handle: [TCP],\x1B[39m\n' +
+    '\x1B[31m      _usingWorkers: false,\x1B[39m\n' +
+    '\x1B[31m      _workers: [],\x1B[39m\n' +
+    '\x1B[31m      _unref: false,\x1B[39m\n' +
+    '\x1B[31m      allowHalfOpen: true,\x1B[39m\n' +
+    '\x1B[31m      pauseOnConnect: false,\x1B[39m\n' +
+    '\x1B[31m      noDelay: true,\x1B[39m\n' +
+    '\x1B[31m      keepAlive: false,\x1B[39m\n' +
+    '\x1B[31m      keepAliveInitialDelay: 0,\x1B[39m\n' +
+    '\x1B[31m      highWaterMark: 16384,\x1B[39m\n' +
+    '\x1B[31m      httpAllowHalfOpen: false,\x1B[39m\n' +
+    '\x1B[31m      timeout: 0,\x1B[39m\n' +
+    '\x1B[31m      maxHeadersCount: null,\x1B[39m\n' +
+    '\x1B[31m      maxRequestsPerSocket: 0,\x1B[39m\n' +
+    "\x1B[31m      _connectionKey: '6::::3000',\x1B[39m\n" +
+    '\x1B[31m      [Symbol(IncomingMessage)]: [Function: IncomingMessage],\x1B[39m\n' +
+    '\x1B[31m      [Symbol(ServerResponse)]: [Function: ServerResponse],\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kCapture)]: false,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(async_id_symbol)]: 9,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(http.server.connections)]: ConnectionsList {},\x1B[39m\n' +
+    '\x1B[31m      [Symbol(http.server.connectionsCheckingInterval)]: Timeout {\x1B[39m\n' +
+    '\x1B[31m        _idleTimeout: 30000,\x1B[39m\n' +
+    '\x1B[31m        _idlePrev: [TimersList],\x1B[39m\n' +
+    '\x1B[31m        _idleNext: [TimersList],\x1B[39m\n' +
+    '\x1B[31m        _idleStart: 127,\x1B[39m\n' +
+    '\x1B[31m        _onTimeout: [Function: bound checkConnections],\x1B[39m\n' +
+    '\x1B[31m        _timerArgs: undefined,\x1B[39m\n' +
+    '\x1B[31m        _repeat: 30000,\x1B[39m\n' +
+    '\x1B[31m        _destroyed: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(refed)]: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(kHasPrimitive)]: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(asyncId)]: 8,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(triggerId)]: 1\x1B[39m\n' +
+    '\x1B[31m      },\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kUniqueHeaders)]: null\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    parser: HTTPParser {\x1B[39m\n' +
+    "\x1B[31m      '0': null,\x1B[39m\n" +
+    "\x1B[31m      '1': [Function: parserOnHeaders],\x1B[39m\n" +
+    "\x1B[31m      '2': [Function: parserOnHeadersComplete],\x1B[39m\n" +
+    "\x1B[31m      '3': [Function: parserOnBody],\x1B[39m\n" +
+    "\x1B[31m      '4': [Function: parserOnMessageComplete],\x1B[39m\n" +
+    "\x1B[31m      '5': [Function: bound onParserExecute],\x1B[39m\n" +
+    "\x1B[31m      '6': [Function: bound onParserTimeout],\x1B[39m\n" +
+    '\x1B[31m      _headers: [],\x1B[39m\n' +
+    "\x1B[31m      _url: '',\x1B[39m\n" +
+    '\x1B[31m      socket: [Circular *1],\x1B[39m\n' +
+    '\x1B[31m      incoming: [Circular *2],\x1B[39m\n' +
+    '\x1B[31m      outgoing: null,\x1B[39m\n' +
+    '\x1B[31m      maxHeaderPairs: 2000,\x1B[39m\n' +
+    '\x1B[31m      _consumed: true,\x1B[39m\n' +
+    '\x1B[31m      onIncoming: [Function: bound parserOnIncoming],\x1B[39m\n' +
+    '\x1B[31m      [Symbol(resource_symbol)]: [HTTPServerAsyncResource]\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    on: [Function: socketListenerWrap],\x1B[39m\n' +
+    '\x1B[31m    addListener: [Function: socketListenerWrap],\x1B[39m\n' +
+    '\x1B[31m    prependListener: [Function: socketListenerWrap],\x1B[39m\n' +
+    '\x1B[31m    setEncoding: [Function: socketSetEncoding],\x1B[39m\n' +
+    '\x1B[31m    _paused: false,\x1B[39m\n' +
+    '\x1B[31m    _httpMessage: ServerResponse {\x1B[39m\n' +
+    '\x1B[31m      _events: [Object: null prototype],\x1B[39m\n' +
+    '\x1B[31m      _eventsCount: 1,\x1B[39m\n' +
+    '\x1B[31m      _maxListeners: undefined,\x1B[39m\n' +
+    '\x1B[31m      outputData: [],\x1B[39m\n' +
+    '\x1B[31m      outputSize: 0,\x1B[39m\n' +
+    '\x1B[31m      writable: true,\x1B[39m\n' +
+    '\x1B[31m      destroyed: false,\x1B[39m\n' +
+    '\x1B[31m      _last: false,\x1B[39m\n' +
+    '\x1B[31m      chunkedEncoding: false,\x1B[39m\n' +
+    '\x1B[31m  '... 18431 more characters,
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2024-06-15 12:12:35'
+}
+{
+  message: '\x1B[31m<ref *2> IncomingMessage {\x1B[39m\n' +
+    '\x1B[31m  _readableState: ReadableState {\x1B[39m\n' +
+    '\x1B[31m    objectMode: false,\x1B[39m\n' +
+    '\x1B[31m    highWaterMark: 16384,\x1B[39m\n' +
+    '\x1B[31m    buffer: BufferList { head: null, tail: null, length: 0 },\x1B[39m\n' +
+    '\x1B[31m    length: 0,\x1B[39m\n' +
+    '\x1B[31m    pipes: [],\x1B[39m\n' +
+    '\x1B[31m    flowing: null,\x1B[39m\n' +
+    '\x1B[31m    ended: false,\x1B[39m\n' +
+    '\x1B[31m    endEmitted: false,\x1B[39m\n' +
+    '\x1B[31m    reading: false,\x1B[39m\n' +
+    '\x1B[31m    constructed: true,\x1B[39m\n' +
+    '\x1B[31m    sync: true,\x1B[39m\n' +
+    '\x1B[31m    needReadable: false,\x1B[39m\n' +
+    '\x1B[31m    emittedReadable: false,\x1B[39m\n' +
+    '\x1B[31m    readableListening: false,\x1B[39m\n' +
+    '\x1B[31m    resumeScheduled: false,\x1B[39m\n' +
+    '\x1B[31m    errorEmitted: false,\x1B[39m\n' +
+    '\x1B[31m    emitClose: true,\x1B[39m\n' +
+    '\x1B[31m    autoDestroy: true,\x1B[39m\n' +
+    '\x1B[31m    destroyed: false,\x1B[39m\n' +
+    '\x1B[31m    errored: null,\x1B[39m\n' +
+    '\x1B[31m    closed: false,\x1B[39m\n' +
+    '\x1B[31m    closeEmitted: false,\x1B[39m\n' +
+    "\x1B[31m    defaultEncoding: 'utf8',\x1B[39m\n" +
+    '\x1B[31m    awaitDrainWriters: null,\x1B[39m\n' +
+    '\x1B[31m    multiAwaitDrain: false,\x1B[39m\n' +
+    '\x1B[31m    readingMore: true,\x1B[39m\n' +
+    '\x1B[31m    dataEmitted: false,\x1B[39m\n' +
+    '\x1B[31m    decoder: null,\x1B[39m\n' +
+    '\x1B[31m    encoding: null,\x1B[39m\n' +
+    '\x1B[31m    [Symbol(kPaused)]: null\x1B[39m\n' +
+    '\x1B[31m  },\x1B[39m\n' +
+    '\x1B[31m  _events: [Object: null prototype] {},\x1B[39m\n' +
+    '\x1B[31m  _eventsCount: 0,\x1B[39m\n' +
+    '\x1B[31m  _maxListeners: undefined,\x1B[39m\n' +
+    '\x1B[31m  socket: <ref *1> Socket {\x1B[39m\n' +
+    '\x1B[31m    connecting: false,\x1B[39m\n' +
+    '\x1B[31m    _hadError: false,\x1B[39m\n' +
+    '\x1B[31m    _parent: null,\x1B[39m\n' +
+    '\x1B[31m    _host: null,\x1B[39m\n' +
+    '\x1B[31m    _closeAfterHandlingError: false,\x1B[39m\n' +
+    '\x1B[31m    _readableState: ReadableState {\x1B[39m\n' +
+    '\x1B[31m      objectMode: false,\x1B[39m\n' +
+    '\x1B[31m      highWaterMark: 16384,\x1B[39m\n' +
+    '\x1B[31m      buffer: BufferList { head: null, tail: null, length: 0 },\x1B[39m\n' +
+    '\x1B[31m      length: 0,\x1B[39m\n' +
+    '\x1B[31m      pipes: [],\x1B[39m\n' +
+    '\x1B[31m      flowing: true,\x1B[39m\n' +
+    '\x1B[31m      ended: false,\x1B[39m\n' +
+    '\x1B[31m      endEmitted: false,\x1B[39m\n' +
+    '\x1B[31m      reading: true,\x1B[39m\n' +
+    '\x1B[31m      constructed: true,\x1B[39m\n' +
+    '\x1B[31m      sync: false,\x1B[39m\n' +
+    '\x1B[31m      needReadable: true,\x1B[39m\n' +
+    '\x1B[31m      emittedReadable: false,\x1B[39m\n' +
+    '\x1B[31m      readableListening: false,\x1B[39m\n' +
+    '\x1B[31m      resumeScheduled: false,\x1B[39m\n' +
+    '\x1B[31m      errorEmitted: false,\x1B[39m\n' +
+    '\x1B[31m      emitClose: false,\x1B[39m\n' +
+    '\x1B[31m      autoDestroy: true,\x1B[39m\n' +
+    '\x1B[31m      destroyed: false,\x1B[39m\n' +
+    '\x1B[31m      errored: null,\x1B[39m\n' +
+    '\x1B[31m      closed: false,\x1B[39m\n' +
+    '\x1B[31m      closeEmitted: false,\x1B[39m\n' +
+    "\x1B[31m      defaultEncoding: 'utf8',\x1B[39m\n" +
+    '\x1B[31m      awaitDrainWriters: null,\x1B[39m\n' +
+    '\x1B[31m      multiAwaitDrain: false,\x1B[39m\n' +
+    '\x1B[31m      readingMore: false,\x1B[39m\n' +
+    '\x1B[31m      dataEmitted: false,\x1B[39m\n' +
+    '\x1B[31m      decoder: null,\x1B[39m\n' +
+    '\x1B[31m      encoding: null,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kPaused)]: false\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    _events: [Object: null prototype] {\x1B[39m\n' +
+    '\x1B[31m      end: [Array],\x1B[39m\n' +
+    '\x1B[31m      timeout: [Function: socketOnTimeout],\x1B[39m\n' +
+    '\x1B[31m      data: [Function: bound socketOnData],\x1B[39m\n' +
+    '\x1B[31m      error: [Function: socketOnError],\x1B[39m\n' +
+    '\x1B[31m      close: [Array],\x1B[39m\n' +
+    '\x1B[31m      drain: [Function: bound socketOnDrain],\x1B[39m\n' +
+    '\x1B[31m      resume: [Function: onSocketResume],\x1B[39m\n' +
+    '\x1B[31m      pause: [Function: onSocketPause]\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    _eventsCount: 8,\x1B[39m\n' +
+    '\x1B[31m    _maxListeners: undefined,\x1B[39m\n' +
+    '\x1B[31m    _writableState: WritableState {\x1B[39m\n' +
+    '\x1B[31m      objectMode: false,\x1B[39m\n' +
+    '\x1B[31m      highWaterMark: 16384,\x1B[39m\n' +
+    '\x1B[31m      finalCalled: false,\x1B[39m\n' +
+    '\x1B[31m      needDrain: false,\x1B[39m\n' +
+    '\x1B[31m      ending: false,\x1B[39m\n' +
+    '\x1B[31m      ended: false,\x1B[39m\n' +
+    '\x1B[31m      finished: false,\x1B[39m\n' +
+    '\x1B[31m      destroyed: false,\x1B[39m\n' +
+    '\x1B[31m      decodeStrings: false,\x1B[39m\n' +
+    "\x1B[31m      defaultEncoding: 'utf8',\x1B[39m\n" +
+    '\x1B[31m      length: 0,\x1B[39m\n' +
+    '\x1B[31m      writing: false,\x1B[39m\n' +
+    '\x1B[31m      corked: 0,\x1B[39m\n' +
+    '\x1B[31m      sync: true,\x1B[39m\n' +
+    '\x1B[31m      bufferProcessing: false,\x1B[39m\n' +
+    '\x1B[31m      onwrite: [Function: bound onwrite],\x1B[39m\n' +
+    '\x1B[31m      writecb: null,\x1B[39m\n' +
+    '\x1B[31m      writelen: 0,\x1B[39m\n' +
+    '\x1B[31m      afterWriteTickInfo: null,\x1B[39m\n' +
+    '\x1B[31m      buffered: [],\x1B[39m\n' +
+    '\x1B[31m      bufferedIndex: 0,\x1B[39m\n' +
+    '\x1B[31m      allBuffers: true,\x1B[39m\n' +
+    '\x1B[31m      allNoop: true,\x1B[39m\n' +
+    '\x1B[31m      pendingcb: 0,\x1B[39m\n' +
+    '\x1B[31m      constructed: true,\x1B[39m\n' +
+    '\x1B[31m      prefinished: false,\x1B[39m\n' +
+    '\x1B[31m      errorEmitted: false,\x1B[39m\n' +
+    '\x1B[31m      emitClose: false,\x1B[39m\n' +
+    '\x1B[31m      autoDestroy: true,\x1B[39m\n' +
+    '\x1B[31m      errored: null,\x1B[39m\n' +
+    '\x1B[31m      closed: false,\x1B[39m\n' +
+    '\x1B[31m      closeEmitted: false,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kOnFinished)]: []\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    allowHalfOpen: true,\x1B[39m\n' +
+    '\x1B[31m    _sockname: null,\x1B[39m\n' +
+    '\x1B[31m    _pendingData: null,\x1B[39m\n' +
+    "\x1B[31m    _pendingEncoding: '',\x1B[39m\n" +
+    '\x1B[31m    server: Server {\x1B[39m\n' +
+    '\x1B[31m      maxHeaderSize: undefined,\x1B[39m\n' +
+    '\x1B[31m      insecureHTTPParser: undefined,\x1B[39m\n' +
+    '\x1B[31m      requestTimeout: 300000,\x1B[39m\n' +
+    '\x1B[31m      headersTimeout: 60000,\x1B[39m\n' +
+    '\x1B[31m      keepAliveTimeout: 5000,\x1B[39m\n' +
+    '\x1B[31m      connectionsCheckingInterval: 30000,\x1B[39m\n' +
+    '\x1B[31m      joinDuplicateHeaders: undefined,\x1B[39m\n' +
+    '\x1B[31m      rejectNonStandardBodyWrites: false,\x1B[39m\n' +
+    '\x1B[31m      _events: [Object: null prototype],\x1B[39m\n' +
+    '\x1B[31m      _eventsCount: 2,\x1B[39m\n' +
+    '\x1B[31m      _maxListeners: undefined,\x1B[39m\n' +
+    '\x1B[31m      _connections: 1,\x1B[39m\n' +
+    '\x1B[31m      _handle: [TCP],\x1B[39m\n' +
+    '\x1B[31m      _usingWorkers: false,\x1B[39m\n' +
+    '\x1B[31m      _workers: [],\x1B[39m\n' +
+    '\x1B[31m      _unref: false,\x1B[39m\n' +
+    '\x1B[31m      allowHalfOpen: true,\x1B[39m\n' +
+    '\x1B[31m      pauseOnConnect: false,\x1B[39m\n' +
+    '\x1B[31m      noDelay: true,\x1B[39m\n' +
+    '\x1B[31m      keepAlive: false,\x1B[39m\n' +
+    '\x1B[31m      keepAliveInitialDelay: 0,\x1B[39m\n' +
+    '\x1B[31m      highWaterMark: 16384,\x1B[39m\n' +
+    '\x1B[31m      httpAllowHalfOpen: false,\x1B[39m\n' +
+    '\x1B[31m      timeout: 0,\x1B[39m\n' +
+    '\x1B[31m      maxHeadersCount: null,\x1B[39m\n' +
+    '\x1B[31m      maxRequestsPerSocket: 0,\x1B[39m\n' +
+    "\x1B[31m      _connectionKey: '6::::3000',\x1B[39m\n" +
+    '\x1B[31m      [Symbol(IncomingMessage)]: [Function: IncomingMessage],\x1B[39m\n' +
+    '\x1B[31m      [Symbol(ServerResponse)]: [Function: ServerResponse],\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kCapture)]: false,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(async_id_symbol)]: 9,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(http.server.connections)]: ConnectionsList {},\x1B[39m\n' +
+    '\x1B[31m      [Symbol(http.server.connectionsCheckingInterval)]: Timeout {\x1B[39m\n' +
+    '\x1B[31m        _idleTimeout: 30000,\x1B[39m\n' +
+    '\x1B[31m        _idlePrev: [TimersList],\x1B[39m\n' +
+    '\x1B[31m        _idleNext: [TimersList],\x1B[39m\n' +
+    '\x1B[31m        _idleStart: 114,\x1B[39m\n' +
+    '\x1B[31m        _onTimeout: [Function: bound checkConnections],\x1B[39m\n' +
+    '\x1B[31m        _timerArgs: undefined,\x1B[39m\n' +
+    '\x1B[31m        _repeat: 30000,\x1B[39m\n' +
+    '\x1B[31m        _destroyed: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(refed)]: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(kHasPrimitive)]: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(asyncId)]: 8,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(triggerId)]: 1\x1B[39m\n' +
+    '\x1B[31m      },\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kUniqueHeaders)]: null\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    _server: Server {\x1B[39m\n' +
+    '\x1B[31m      maxHeaderSize: undefined,\x1B[39m\n' +
+    '\x1B[31m      insecureHTTPParser: undefined,\x1B[39m\n' +
+    '\x1B[31m      requestTimeout: 300000,\x1B[39m\n' +
+    '\x1B[31m      headersTimeout: 60000,\x1B[39m\n' +
+    '\x1B[31m      keepAliveTimeout: 5000,\x1B[39m\n' +
+    '\x1B[31m      connectionsCheckingInterval: 30000,\x1B[39m\n' +
+    '\x1B[31m      joinDuplicateHeaders: undefined,\x1B[39m\n' +
+    '\x1B[31m      rejectNonStandardBodyWrites: false,\x1B[39m\n' +
+    '\x1B[31m      _events: [Object: null prototype],\x1B[39m\n' +
+    '\x1B[31m      _eventsCount: 2,\x1B[39m\n' +
+    '\x1B[31m      _maxListeners: undefined,\x1B[39m\n' +
+    '\x1B[31m      _connections: 1,\x1B[39m\n' +
+    '\x1B[31m      _handle: [TCP],\x1B[39m\n' +
+    '\x1B[31m      _usingWorkers: false,\x1B[39m\n' +
+    '\x1B[31m      _workers: [],\x1B[39m\n' +
+    '\x1B[31m      _unref: false,\x1B[39m\n' +
+    '\x1B[31m      allowHalfOpen: true,\x1B[39m\n' +
+    '\x1B[31m      pauseOnConnect: false,\x1B[39m\n' +
+    '\x1B[31m      noDelay: true,\x1B[39m\n' +
+    '\x1B[31m      keepAlive: false,\x1B[39m\n' +
+    '\x1B[31m      keepAliveInitialDelay: 0,\x1B[39m\n' +
+    '\x1B[31m      highWaterMark: 16384,\x1B[39m\n' +
+    '\x1B[31m      httpAllowHalfOpen: false,\x1B[39m\n' +
+    '\x1B[31m      timeout: 0,\x1B[39m\n' +
+    '\x1B[31m      maxHeadersCount: null,\x1B[39m\n' +
+    '\x1B[31m      maxRequestsPerSocket: 0,\x1B[39m\n' +
+    "\x1B[31m      _connectionKey: '6::::3000',\x1B[39m\n" +
+    '\x1B[31m      [Symbol(IncomingMessage)]: [Function: IncomingMessage],\x1B[39m\n' +
+    '\x1B[31m      [Symbol(ServerResponse)]: [Function: ServerResponse],\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kCapture)]: false,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(async_id_symbol)]: 9,\x1B[39m\n' +
+    '\x1B[31m      [Symbol(http.server.connections)]: ConnectionsList {},\x1B[39m\n' +
+    '\x1B[31m      [Symbol(http.server.connectionsCheckingInterval)]: Timeout {\x1B[39m\n' +
+    '\x1B[31m        _idleTimeout: 30000,\x1B[39m\n' +
+    '\x1B[31m        _idlePrev: [TimersList],\x1B[39m\n' +
+    '\x1B[31m        _idleNext: [TimersList],\x1B[39m\n' +
+    '\x1B[31m        _idleStart: 114,\x1B[39m\n' +
+    '\x1B[31m        _onTimeout: [Function: bound checkConnections],\x1B[39m\n' +
+    '\x1B[31m        _timerArgs: undefined,\x1B[39m\n' +
+    '\x1B[31m        _repeat: 30000,\x1B[39m\n' +
+    '\x1B[31m        _destroyed: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(refed)]: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(kHasPrimitive)]: false,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(asyncId)]: 8,\x1B[39m\n' +
+    '\x1B[31m        [Symbol(triggerId)]: 1\x1B[39m\n' +
+    '\x1B[31m      },\x1B[39m\n' +
+    '\x1B[31m      [Symbol(kUniqueHeaders)]: null\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    parser: HTTPParser {\x1B[39m\n' +
+    "\x1B[31m      '0': null,\x1B[39m\n" +
+    "\x1B[31m      '1': [Function: parserOnHeaders],\x1B[39m\n" +
+    "\x1B[31m      '2': [Function: parserOnHeadersComplete],\x1B[39m\n" +
+    "\x1B[31m      '3': [Function: parserOnBody],\x1B[39m\n" +
+    "\x1B[31m      '4': [Function: parserOnMessageComplete],\x1B[39m\n" +
+    "\x1B[31m      '5': [Function: bound onParserExecute],\x1B[39m\n" +
+    "\x1B[31m      '6': [Function: bound onParserTimeout],\x1B[39m\n" +
+    '\x1B[31m      _headers: [],\x1B[39m\n' +
+    "\x1B[31m      _url: '',\x1B[39m\n" +
+    '\x1B[31m      socket: [Circular *1],\x1B[39m\n' +
+    '\x1B[31m      incoming: [Circular *2],\x1B[39m\n' +
+    '\x1B[31m      outgoing: null,\x1B[39m\n' +
+    '\x1B[31m      maxHeaderPairs: 2000,\x1B[39m\n' +
+    '\x1B[31m      _consumed: true,\x1B[39m\n' +
+    '\x1B[31m      onIncoming: [Function: bound parserOnIncoming],\x1B[39m\n' +
+    '\x1B[31m      [Symbol(resource_symbol)]: [HTTPServerAsyncResource]\x1B[39m\n' +
+    '\x1B[31m    },\x1B[39m\n' +
+    '\x1B[31m    on: [Function: socketListenerWrap],\x1B[39m\n' +
+    '\x1B[31m    addListener: [Function: socketListenerWrap],\x1B[39m\n' +
+    '\x1B[31m    prependListener: [Function: socketListenerWrap],\x1B[39m\n' +
+    '\x1B[31m    setEncoding: [Function: socketSetEncoding],\x1B[39m\n' +
+    '\x1B[31m    _paused: false,\x1B[39m\n' +
+    '\x1B[31m    _httpMessage: ServerResponse {\x1B[39m\n' +
+    '\x1B[31m      _events: [Object: null prototype],\x1B[39m\n' +
+    '\x1B[31m      _eventsCount: 1,\x1B[39m\n' +
+    '\x1B[31m      _maxListeners: undefined,\x1B[39m\n' +
+    '\x1B[31m      outputData: [],\x1B[39m\n' +
+    '\x1B[31m      outputSize: 0,\x1B[39m\n' +
+    '\x1B[31m      writable: true,\x1B[39m\n' +
+    '\x1B[31m      destroyed: false,\x1B[39m\n' +
+    '\x1B[31m      _last: false,\x1B[39m\n' +
+    '\x1B[31m      chunkedEncoding: false,\x1B[39m\n' +
+    '\x1B[31m  '... 18431 more characters,
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2024-06-15 12:14:41'
+}
+{
+  url: '/api/user',
+  method: 'GET',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2024-06-15 12:21:08',
+  message: '\x1B[31merror\x1B[39m',
+  stack: 'Error: error\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/dist/router.js:10:11\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:149:13)\n' +
+    '    at Route.dispatch (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:284:15\n' +
+    '    at Function.process_params (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at Function.handle (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:175:3)\n' +
+    '    at router (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:47:12)'
+}
+{
+  url: '/api/content/getNoteContent',
+  method: 'GET',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2024-06-15 12:24:59',
+  message: '\x1B[31mnoteId is required\x1B[39m',
+  stack: 'Error: noteId is required\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/dist/controller/content.js:14:15\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:149:13)\n' +
+    '    at Route.dispatch (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:284:15\n' +
+    '    at Function.process_params (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at Function.handle (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:175:3)\n' +
+    '    at router (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:47:12)'
+}
+{
+  url: '/api/content/getNoteContent',
+  method: 'GET',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2024-06-15 12:40:34',
+  message: '\x1B[31mnoteId is required\x1B[39m',
+  stack: 'Error: noteId is required\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/dist/controller/content.js:14:15\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:149:13)\n' +
+    '    at Route.dispatch (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:284:15\n' +
+    '    at Function.process_params (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at Function.handle (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:175:3)\n' +
+    '    at router (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:47:12)'
+}
+{
+  url: '/api/content/getNoteContent',
+  method: 'GET',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2024-06-15 12:40:52',
+  message: '\x1B[31mnoteId is required\x1B[39m',
+  stack: 'Error: noteId is required\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/dist/controller/content.js:14:15\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:149:13)\n' +
+    '    at Route.dispatch (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:284:15\n' +
+    '    at Function.process_params (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at Function.handle (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:175:3)\n' +
+    '    at router (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:47:12)'
+}
+{
+  url: '/api/content/getNoteContent?nodeId=111',
+  method: 'GET',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2024-06-15 12:52:46',
+  message: '\x1B[31mnoteId is required\x1B[39m',
+  stack: 'Error: noteId is required\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/dist/controller/content.js:14:15\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:149:13)\n' +
+    '    at Route.dispatch (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:284:15\n' +
+    '    at Function.process_params (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at Function.handle (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:175:3)\n' +
+    '    at router (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:47:12)'
+}
+{
+  statusCode: 400,
+  name: 'BizError',
+  url: '/api/content/getNoteContent?nodeId=111',
+  method: 'GET',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2024-06-15 12:52:58',
+  message: '\x1B[31mnoteId is required\x1B[39m',
+  stack: 'BizError: noteId is required\n' +
+    '    at createError (/Users/luten2/Desktop/workspace/self/red_book_scripts/dist/utils.js:9:12)\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/dist/controller/content.js:15:39\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:149:13)\n' +
+    '    at Route.dispatch (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:284:15\n' +
+    '    at Function.process_params (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at Function.handle (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:175:3)'
+}
+{
+  statusCode: 400,
+  name: 'BizError',
+  url: '/api/content/getNoteContent?nodeId=111',
+  method: 'GET',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2024-06-15 12:53:35',
+  message: '\x1B[31mnoteId is required\x1B[39m',
+  stack: 'BizError: noteId is required\n' +
+    '    at createError (/Users/luten2/Desktop/workspace/self/red_book_scripts/dist/utils.js:9:12)\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/dist/controller/content.js:16:39\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:149:13)\n' +
+    '    at Route.dispatch (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:284:15\n' +
+    '    at Function.process_params (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at Function.handle (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:175:3)'
+}
+{
+  statusCode: 400,
+  name: 'BizError',
+  url: '/api/content/getNoteContent?nodeId=111',
+  method: 'GET',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2024-06-15 12:54:19',
+  message: '\x1B[31mnoteId is required\x1B[39m',
+  stack: 'BizError: noteId is required\n' +
+    '    at createError (/Users/luten2/Desktop/workspace/self/red_book_scripts/dist/utils.js:9:12)\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/dist/controller/content.js:16:39\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:149:13)\n' +
+    '    at Route.dispatch (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:284:15\n' +
+    '    at Function.process_params (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at Function.handle (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:175:3)'
+}
+{
+  statusCode: 400,
+  name: 'BizError',
+  url: '/api/content/getNoteContent?nodeId=111',
+  method: 'GET',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2024-06-15 12:54:47',
+  message: '\x1B[31mnoteId is required\x1B[39m',
+  stack: 'BizError: noteId is required\n' +
+    '    at createError (/Users/luten2/Desktop/workspace/self/red_book_scripts/dist/utils.js:9:12)\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/dist/controller/content.js:16:39\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:149:13)\n' +
+    '    at Route.dispatch (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:284:15\n' +
+    '    at Function.process_params (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at Function.handle (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:175:3)'
+}
+{
+  statusCode: 400,
+  name: 'BizError',
+  url: '/api/content/getNoteContent?noeId=111',
+  method: 'GET',
+  level: '\x1B[31merror\x1B[39m',
+  timestamp: '2024-06-15 12:55:18',
+  message: '\x1B[31mnoteId is required\x1B[39m',
+  stack: 'BizError: noteId is required\n' +
+    '    at createError (/Users/luten2/Desktop/workspace/self/red_book_scripts/dist/utils.js:9:12)\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/dist/controller/content.js:16:39\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:149:13)\n' +
+    '    at Route.dispatch (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/route.js:119:3)\n' +
+    '    at Layer.handle [as handle_request] (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at /Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:284:15\n' +
+    '    at Function.process_params (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:346:12)\n' +
+    '    at next (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:280:10)\n' +
+    '    at Function.handle (/Users/luten2/Desktop/workspace/self/red_book_scripts/node_modules/express/lib/router/index.js:175:3)'
+}

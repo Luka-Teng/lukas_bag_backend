@@ -82,7 +82,7 @@ const main = async () => {
       if (initialState && initialState.note.noteDetailMap[noteId]) {
         const imageList = initialState.note.noteDetailMap[noteId].note.imageList.map((image: any) => image.infoList.filter((item: any) => item.imageScene === 'WB_DFT').map((item: any) => item.url)).flat()
         const video = initialState.note.noteDetailMap[noteId].note?.video?.media?.stream.h264[0].masterUrl
-        const path = `media/${noteId}`
+        const path = `${process.env.publicPath}/media/${noteId}`
         if (existsSync(path)) {
           rmSync(path, { recursive: true })
         }
