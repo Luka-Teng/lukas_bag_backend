@@ -119,3 +119,12 @@ export const getQueryParams = (url: string): Record<string, string> => {
   }
   return params
 }
+
+/* 从小红书分享文案中 */
+export const extractShortLink = (text: string) => {
+  // 正则表达式匹配 http://xhslink.com/... 的 URL
+  const regex = /https?:\/\/xhslink\.com\/[\w\d]+/
+  const match = text.match(regex)
+
+  return match ? match[0] : null
+}

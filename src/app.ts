@@ -1,9 +1,11 @@
 /* express服务入口 */
 import express from 'express'
+import 'express-async-errors'
 import bodyParser from 'body-parser'
 import ContentController from './controller/content'
 import logger from './logger'
 import dotenv from 'dotenv'
+import BizError from './error/BizError'
 
 /* 配置环境变量 */
 dotenv.config({ path: [`.env.${process.env.NODE_ENV}`, '.env'] })
@@ -28,16 +30,18 @@ app.use((req, _res, next) => {
 
 /* 错误的统一处理 */
 app.use((err: any, req: any, res: any, _next: any) => {
-  const statusCode = err.statusCode || 500
-  const message = err.message || 'Internal Server Error'
-
   /* 为error添加额外信息用于log */
   err.url = req.url
   err.method = req.method
   logger.error(err)
 
+  // 非业务错误
+  if (!(err instanceof BizError)) {
+    err.message = 'Internal Server Error'
+  }
+
   /* 输出错误 */
-  res.status(statusCode).json({ status: 'error', message })
+  res.status(err.statusCode || 500).json({ status: 'error', message: err.message })
 })
 
 /* 404 */

@@ -1,6 +1,21 @@
 import fs from 'fs'
+import { extractShortLink } from '../utils/general'
+import { crawl } from '../utils/crawl'
+import { createError } from '../utils/error'
+
 export default class ContentService {
-  getNoteContent(noteId: string) {
+  async getNoteContent(text: string) {
+    const shortLink = extractShortLink(text)
+
+    /* 解析不出短链，返回空数据 */
+    if (!shortLink) throw createError('解析短链失败')
+
+    /* 爬取数据 */
+    const noteId = await crawl(shortLink)
+
+    /* 获取不到笔记，返回空数据 */
+    if (!noteId) throw createError('获取笔记失败')
+
     /* 查询public/media/{noteId}下的所有目录 */
     const mediaPath = `./public/media/${noteId}`
     let mediaList: string[] = []

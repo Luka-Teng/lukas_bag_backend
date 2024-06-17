@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { rmSync, existsSync } from 'fs-extra'
-import config from './config'
-import { downloadMedia, getQueryParams } from './tools'
+import config from './crawlConfig'
+import { downloadMedia, getQueryParams } from './general'
 
 
 
@@ -12,7 +12,11 @@ const getLongUrl = async (shortUrl: string): Promise<string> => {
     const res = await axios.head(shortUrl, { maxRedirects: 10 })
     url = res.request.res.responseUrl
   } catch (error: any) {
-    url = error.request.res.responseUrl
+    if (error.request?.res?.responseUrl) {
+      url = error.request.res.responseUrl
+    } else {
+      throw new Error('获取长链接失败，请检查失败原因。')
+    }
   }
 
   /**
@@ -67,8 +71,7 @@ const downloadVideo = async (videoUrl: string, path?: string): Promise<void> => 
 }
 
 // 主函数
-const main = async () => {
-  const shortUrl = 'http://xhslink.com/UOXTFL' // 修改为你想要的短链接
+export const crawl = async (shortUrl: string) => {
   const longUrl = await getLongUrl(shortUrl)
   console.log(`Long URL: ${longUrl}`)
 
@@ -95,12 +98,13 @@ const main = async () => {
       } else {
         console.log('Failed to retrieve image list.')
       }
+      return noteId
     } else {
       console.log('Invalid HTML content.')
     }
   } else {
     console.log('Failed to get the long URL.')
   }
-}
 
-main()
+  return null
+}
