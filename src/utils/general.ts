@@ -24,19 +24,21 @@ export const parseCurlHeaders = (curlCommand: string): { [key: string]: string }
 export const getExtByContentType = (contentType: string): string => {
   switch (contentType) {
     case 'image/jpeg':
-      return '.jpg'
+      return 'jpg'
     case 'image/png':
-      return '.png'
+      return 'png'
     case 'image/gif':
-      return '.gif'
+      return 'gif'
     case 'image/webp':
-      return '.webp'
+      return 'webp'
     case 'video/mp4':
-      return '.mp4'
+      return 'mp4'
     case 'video/mpeg':
-      return '.mpeg'
+      return 'mpeg'
     case 'video/quicktime':
-      return '.mov'
+      return 'mov'
+    case 'application/octet-stream':
+      return 'mp4'
     default:
       return ''
   }
@@ -57,6 +59,7 @@ export const getTypeByContentType = (contentType: string): string => {
     case 'video/mp4':
     case 'video/mpeg':
     case 'video/quicktime':
+    case 'application/octet-stream':
       return 'video'
     default:
       return ''
@@ -64,7 +67,7 @@ export const getTypeByContentType = (contentType: string): string => {
 }
 
 /* 媒体下载 */
-export const downloadMedia = async (url: string, dest: string = 'media'): Promise<void> => {
+export const downloadMedia = async (url: string, dest: string, format?: string): Promise<void> => {
   console.log('\n')
   console.log(`Downloading media: ${url}...`)
 
@@ -77,7 +80,7 @@ export const downloadMedia = async (url: string, dest: string = 'media'): Promis
   
     const contentType = response.headers['content-type']
     const directory = path.join(dest, getTypeByContentType(contentType))
-    const fileName = `${Math.random().toString(36).slice(-8)}${getExtByContentType(contentType)}`
+    const fileName = `${Math.random().toString(36).slice(-8)}.${format || getExtByContentType(contentType)}`
     
     console.log(`Media type: ${contentType}`)
     console.log(`Media name: ${fileName}`)

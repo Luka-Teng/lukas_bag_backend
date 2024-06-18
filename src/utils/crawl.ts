@@ -59,15 +59,15 @@ const getInitialState = (htmlContent: string): Record<string, any> | null => {
 }
 
 // 下载图片
-const downloadImages = async (imageList: string[], path?: string): Promise<void> => {
+const downloadImages = async (imageList: string[], path: string, format?: string): Promise<void> => {
   for (let i = 0; i < imageList.length; i++) {
-    await downloadMedia(imageList[i], path)
+    await downloadMedia(imageList[i], path, format)
   }
 }
 
 // 下载视频
-const downloadVideo = async (videoUrl: string, path?: string): Promise<void> => {
-  await downloadMedia(videoUrl, path)
+const downloadVideo = async (videoUrl: string, path: string, format?: string): Promise<void> => {
+  await downloadMedia(videoUrl, path, format)
 }
 
 // 主函数
@@ -82,23 +82,36 @@ export const crawl = async (shortUrl: string) => {
     const htmlContent = await getHtmlContent(longUrl)
     if (htmlContent && noteId) {
       const initialState = getInitialState(htmlContent)
-      if (initialState && initialState.note.noteDetailMap[noteId]) {
-        const imageList = initialState.note.noteDetailMap[noteId].note.imageList.map((image: any) => image.infoList.filter((item: any) => item.imageScene === 'WB_DFT').map((item: any) => item.url)).flat()
-        const video = initialState.note.noteDetailMap[noteId].note?.video?.media?.stream.h264[0].masterUrl
-        const path = `${process.env.publicPath}/media/${noteId}`
+      const noteDetail = initialState?.note?.noteDetailMap[noteId]
+      if (noteDetail) {
+        const imageList = noteDetail.note.imageList.map((image: any) => image.infoList.filter((item: any) => item.imageScene === 'WB_DFT').map((item: any) => item.url)).flat()
+        
+        const stream = noteDetail.note?.video?.media?.stream || {}
+        const video = Object.keys(stream)
+          .map((key: string) => {
+            const items = stream[key]
+            return items[0]
+          })
+          .filter(item => item)[0]
+
+        const path = `${process.env.publicPath}/note/${noteId}`
         if (existsSync(path)) {
           rmSync(path, { recursive: true })
         }
         if (video) {
-          await downloadVideo(video, path)
+          await downloadVideo(video.masterUrl, path, video.format)
         } else {
           await downloadImages(imageList, path)
         }
-        console.log('All images downloaded successfully.')
+        console.log('All resources downloaded successfully.')
       } else {
-        console.log('Failed to retrieve image list.')
+        console.log('Failed to retrieve resources')
       }
-      return noteId
+      return {
+        noteId,
+        title: noteDetail.note.title,
+        desc: noteDetail.note.desc,
+      }
     } else {
       console.log('Invalid HTML content.')
     }

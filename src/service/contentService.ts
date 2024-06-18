@@ -11,13 +11,15 @@ export default class ContentService {
     if (!shortLink) throw createError('解析短链失败')
 
     /* 爬取数据 */
-    const noteId = await crawl(shortLink)
+    const data = await crawl(shortLink)
 
     /* 获取不到笔记，返回空数据 */
-    if (!noteId) throw createError('获取笔记失败')
+    if (!data) throw createError('获取笔记失败')
+
+    const { noteId, title, desc } = data
 
     /* 查询public/media/{noteId}下的所有目录 */
-    const mediaPath = `./public/media/${noteId}`
+    const mediaPath = `./public/note/${noteId}`
     let mediaList: string[] = []
 
     try {
@@ -39,11 +41,14 @@ export default class ContentService {
 
       return {
         mediaType,
-        mediaList: mediaList.map(media => `/public/media/${noteId}/${media}`)
+        mediaList: mediaList.map(media => `/note/${noteId}/${media}`)
       }
     }).reduce((acc, cur) => {
       acc[cur.mediaType] = cur.mediaList
       return acc
-    }, {} as Record<string, string[]>)
+    }, {
+      title,
+      desc
+    } as Record<string, string[]>)
   }
 }
