@@ -16,7 +16,7 @@ RUN npm install pm2 -g & npm install
 COPY . .
 
 # 暴露端口
-EXPOSE 3001
+EXPOSE 3000
 
 # 定义环境变量
 ENV NODE_ENV production

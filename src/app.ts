@@ -49,6 +49,6 @@ app.use(function (_req, res, _next) {
   res.status(404).send("Sorry can't find that!")
 })
 
-app.listen(3001, () => {
+app.listen(3000, () => {
   logger.info('server is running on http://localhost:3001')
 })
