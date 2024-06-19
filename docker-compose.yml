@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  red_book_scripts:
+    build: .
+    ports:
+      - "3000:3000"
