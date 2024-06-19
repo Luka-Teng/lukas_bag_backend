@@ -5,7 +5,7 @@ FROM node:16
 WORKDIR /usr/src/app
 
 # 设置npm源为淘宝的npm镜像
-RUN npm config set registry https://registry.npm.taobao.org
+RUN npm config set registry https://registry.npmmirror.com/
 
 COPY package.json ./
 
