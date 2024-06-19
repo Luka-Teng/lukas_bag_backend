@@ -4,6 +4,9 @@ FROM node:16
 # 设置工作目录
 WORKDIR /usr/src/app
 
+# 设置npm源为淘宝的npm镜像
+ENV NPM_REGISTRY=https://registry.npm.taobao.org
+
 COPY package.json ./
 
 # 安装pm2
