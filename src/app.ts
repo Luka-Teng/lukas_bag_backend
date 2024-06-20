@@ -20,7 +20,7 @@ app.use('/static', express.static('public'))
 app.use(bodyParser.json())
 
 /* 处理api */
-app.use('/api/content', ContentController)
+app.use('/content', ContentController)
 
 /* 终端输出log */
 app.use((req, _res, next) => {
