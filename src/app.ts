@@ -50,5 +50,5 @@ app.use(function (_req, res, _next) {
 })
 
 app.listen(3000, () => {
-  logger.info('server is running on http://localhost:3001')
+  logger.info('server is running on http://localhost:3000')
 })
