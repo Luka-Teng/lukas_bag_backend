@@ -15,7 +15,8 @@ services:
       - app-network
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro # 将自定义的Nginx配置文件挂载到容器中
-      - ~/.ssl:/etc/nginx:ro
+      - ~/.ssl/lukas-bag.online_bundle.crt:/etc/nginx/lukas-bag.online_bundle.crt:ro
+      - ~/.ssl/lukas-bag.online.key:/etc/nginx/lukas-bag.online.key:ro
     depends_on:
       - red_book_scripts
 
