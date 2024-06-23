@@ -3,3 +3,4 @@ public
 media
 node_modules
 logs
+package-lock.json
