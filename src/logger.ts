@@ -15,10 +15,9 @@ const logger = winston.createLogger({
     new winston.transports.Console({
       format: winston.format.simple()
     }),
-    /* 错误的日志记录在文件中 */
     new winston.transports.DailyRotateFile({
       format: winston.format.prettyPrint(),
-      level: "error",
+      level: "info",
       dirname: "logs",
       filename: "index-%DATE%.log",
       datePattern: "YYYY-MM-DD-HH"
