@@ -8,19 +8,20 @@ const logger = winston.createLogger({
     winston.format.timestamp({
       format: 'YYYY-MM-DD HH:mm:ss'
     }),
-    winston.format.errors({ stack: true }), // 格式化错误堆栈
-    winston.format.colorize({ all: true }), // 启用所有日志级别的颜色
+    winston.format.errors({ stack: true }),
+    winston.format.simple()
   ),
   transports: [
     new winston.transports.Console({
-      format: winston.format.simple()
+      format: winston.format.combine(
+        winston.format.colorize({ all: true })
+      )
     }),
     new winston.transports.DailyRotateFile({
-      format: winston.format.prettyPrint(),
-      level: "info",
-      dirname: "logs",
-      filename: "index-%DATE%.log",
-      datePattern: "YYYY-MM-DD-HH"
+      level: 'info',
+      dirname: 'logs',
+      filename: 'info-%DATE%.log',
+      datePattern: 'YYYY-MM-DD'
     }),
   ]
 })
