@@ -41,7 +41,7 @@ export default class ContentService {
 
       return {
         mediaType,
-        mediaList: mediaList.map(media => `/note/${noteId}/${media}`)
+        mediaList: mediaList.map(media => `/note/${noteId}/${mediaType}/${media}`)
       }
     }).reduce((acc, cur) => {
       acc[cur.mediaType] = cur.mediaList
