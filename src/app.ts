@@ -46,7 +46,7 @@ app.use((err: any, req: any, res: any, _next: any) => {
 
 /* 404 */
 app.use(function (_req, res, _next) {
-  res.status(404).send("Sorry can't find that!")
+  res.status(404).json({ status: 'error', message: 'Not found' })
 })
 
 app.listen(3000, () => {
