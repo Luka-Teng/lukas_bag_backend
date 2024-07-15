@@ -38,7 +38,8 @@ const getHtmlContent = async (longUrl: string): Promise<string | null> => {
   try {
     const response = await axios.get(longUrl, {
       headers: {
-        ...config.commonHeaders
+        ...config.commonHeaders,
+        cookie: config.cookies.join('; ')
       }
     })
     return response.data
@@ -50,9 +51,13 @@ const getHtmlContent = async (longUrl: string): Promise<string | null> => {
 
 // 解析HTML内容获取window.__INITIAL_STATE__
 const getInitialState = (htmlContent: string): Record<string, any> | null => {
-  const match = htmlContent.match(/window\.__INITIAL_STATE__\s*=\s*(.*?)\<\/script\>/)  
+  const match = htmlContent.match(/window\.__INITIAL_STATE__\s*=\s*(.*?)\<\/script\>/)
   if (match) {
-    const stateString = match[1].replace(/undefined/g, '""')
+    let stateString = match[1].replace(/undefined/g, '""')
+
+    /* 对于\u002F字符，替换为/ */
+    stateString = stateString.replace(/\\u002F/g, '/')
+
     return JSON.parse(stateString)
   }
   return null
