@@ -55,8 +55,7 @@ const getInitialState = (htmlContent: string): Record<string, any> | null => {
   if (match) {
     let stateString = match[1].replace(/undefined/g, '""')
 
-    /* 对于\u002F字符，替换为/ */
-    stateString = stateString.replace(/\\u002F/g, '/')
+    stateString = decodeURIComponent(stateString)
 
     return JSON.parse(stateString)
   }
@@ -101,7 +100,7 @@ export const crawl = async (shortUrl: string) => {
         const originVideoKey = noteDetail.note?.video?.consumer?.originVideoKey
 
         if (originVideoKey) {
-          video.url = 'https://sns-video-bd.xhscdn.com' + decodeURIComponent(originVideoKey)
+          video.url = 'https://sns-video-bd.xhscdn.com/' + decodeURIComponent(originVideoKey)
           const stream = noteDetail.note?.video?.media?.stream || {}
           const streamInfo = Object.keys(stream)
             .map((key: string) => {
