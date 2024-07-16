@@ -91,20 +91,33 @@ export const crawl = async (shortUrl: string) => {
       if (noteDetail) {
         const imageList = noteDetail.note.imageList.map((image: any) => image.infoList.filter((item: any) => item.imageScene === 'WB_DFT').map((item: any) => item.url)).flat()
         
-        const stream = noteDetail.note?.video?.media?.stream || {}
-        const video = Object.keys(stream)
-          .map((key: string) => {
-            const items = stream[key]
-            return items[0]
-          })
-          .filter(item => item)[0]
+        let video: {
+          url: string,
+          format: string,
+        } = {
+          url: '',
+          format: ''
+        }
+        const originVideoKey = noteDetail.note?.video?.consumer?.originVideoKey
+
+        if (originVideoKey) {
+          video.url = 'https://sns-video-bd.xhscdn.com' + decodeURIComponent(originVideoKey)
+          const stream = noteDetail.note?.video?.media?.stream || {}
+          const streamInfo = Object.keys(stream)
+            .map((key: string) => {
+              const items = stream[key]
+              return items[0]
+            })
+            .filter(item => item)[0]
+          video.format = streamInfo?.format || ''
+        }
 
         const path = `${process.env.publicPath}/note/${noteId}`
         if (existsSync(path)) {
           rmSync(path, { recursive: true })
         }
-        if (video) {
-          await downloadVideo(video.masterUrl, path, video.format)
+        if (video.url) {
+          await downloadVideo(video.url, path, video.format)
         } else {
           await downloadImages(imageList, path)
         }
