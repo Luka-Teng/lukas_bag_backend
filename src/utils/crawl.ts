@@ -152,7 +152,7 @@ export const crawl = async (shortUrl: string) => {
     if (existsSync(videoDir)) {
       /* 获取path下的第一个视频 */
       const files = readdirSync(videoDir)
-      videos.push(...files.map(file => path.join(process.env.staticUrl || '', `note/${noteId}/video/${file}`)))
+      videos.push(...files.map(file => process.env.staticUrl + `/note/${noteId}/video/${file}`))
     } else {
       const file = await downloadVideo({
         url: video.url,
@@ -162,7 +162,7 @@ export const crawl = async (shortUrl: string) => {
           resolution: 720
         }
       })
-      videos.push(path.join(process.env.staticUrl || '', `note/${noteId}/video/${file}`))
+      videos.push(process.env.staticUrl + `/note/${noteId}/video/${file}`)
     }
   }
 
