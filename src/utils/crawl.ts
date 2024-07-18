@@ -1,9 +1,8 @@
 import axios from 'axios'
-import { rmSync, existsSync } from 'fs-extra'
+import path from 'path'
+import { readdirSync, existsSync } from 'fs-extra'
 import config from './crawlConfig'
-import { downloadMedia, getQueryParams } from './general'
-
-
+import { downloadVideo, getQueryParams } from './general'
 
 // 请求短链获取重定向后的长链接
 const getLongUrl = async (shortUrl: string): Promise<string> => {
@@ -53,25 +52,57 @@ const getHtmlContent = async (longUrl: string): Promise<string | null> => {
 const getInitialState = (htmlContent: string): Record<string, any> | null => {
   const match = htmlContent.match(/window\.__INITIAL_STATE__\s*=\s*(.*?)\<\/script\>/)
   if (match) {
-    let stateString = match[1].replace(/undefined/g, '""')
+    try {
+      let stateString = match[1].replace(/undefined/g, '""')
 
-    stateString = decodeURIComponent(stateString)
+      stateString = decodeURIComponent(stateString)
 
-    return JSON.parse(stateString)
+      return JSON.parse(stateString)
+    } catch (error) {
+      return null
+    }
   }
   return null
 }
 
-// 下载图片
-const downloadImages = async (imageList: string[], path: string, format?: string): Promise<void> => {
-  for (let i = 0; i < imageList.length; i++) {
-    await downloadMedia(imageList[i], path, format)
+// 从initialState中获取笔记信息
+const getNoteDetail = (initialState: Record<string, any>, noteId: string) => {
+  const noteDetail = {
+    noteId,
+    title: '',
+    desc: '',
+    images: [] as string[],
+    video: {
+      url: '',
+      format: ''
+    }
   }
-}
 
-// 下载视频
-const downloadVideo = async (videoUrl: string, path: string, format?: string): Promise<void> => {
-  await downloadMedia(videoUrl, path, format)
+  const noteInfo = initialState?.note?.noteDetailMap && initialState?.note?.noteDetailMap[noteId]
+  if (noteInfo) {
+    noteDetail.title = noteInfo.note.title
+    noteDetail.desc = noteInfo.note.desc
+    noteDetail.images = noteInfo.note.imageList
+    .map((image: any) => image.infoList.filter((item: any) => item.imageScene === 'WB_DFT')
+    .map((item: any) => item.url))
+    .flat()
+    .map((url: string) => url.replace('http://', 'https://'))
+    
+    const originVideoKey = noteInfo.note?.video?.consumer?.originVideoKey
+    if (originVideoKey) {
+      noteDetail.video.url = path.join(process.env.redBookVideoHost || '', originVideoKey)
+      const stream = noteInfo.note?.video?.media?.stream || {}
+      const streamInfo = Object.keys(stream)
+        .map((key: string) => {
+          const items = stream[key]
+          return items[0]
+        })
+        .filter(item => item)[0]
+      noteDetail.video.format = streamInfo?.format || ''
+    }
+  }
+
+  return noteDetail
 }
 
 // 主函数
@@ -79,62 +110,67 @@ export const crawl = async (shortUrl: string) => {
   const longUrl = await getLongUrl(shortUrl)
   console.log(`Long URL: ${longUrl}`)
 
-  if (longUrl) {
-    // 获取笔记id, 格式为/explore/{noteId}或/discovery/item/{noteId}, 使用正则进行匹配
-    const noteId = longUrl.match(/\/(explore|discovery\/item)\/([\d\w]+)/)?.[2]
-
-    const htmlContent = await getHtmlContent(longUrl)
-    if (htmlContent && noteId) {
-      const initialState = getInitialState(htmlContent)
-      const noteDetail = initialState?.note?.noteDetailMap[noteId]
-      if (noteDetail) {
-        const imageList = noteDetail.note.imageList.map((image: any) => image.infoList.filter((item: any) => item.imageScene === 'WB_DFT').map((item: any) => item.url)).flat()
-        
-        let video: {
-          url: string,
-          format: string,
-        } = {
-          url: '',
-          format: ''
-        }
-        const originVideoKey = noteDetail.note?.video?.consumer?.originVideoKey
-
-        if (originVideoKey) {
-          video.url = 'https://sns-video-bd.xhscdn.com/' + decodeURIComponent(originVideoKey)
-          const stream = noteDetail.note?.video?.media?.stream || {}
-          const streamInfo = Object.keys(stream)
-            .map((key: string) => {
-              const items = stream[key]
-              return items[0]
-            })
-            .filter(item => item)[0]
-          video.format = streamInfo?.format || ''
-        }
-
-        const path = `${process.env.publicPath}/note/${noteId}`
-        if (existsSync(path)) {
-          rmSync(path, { recursive: true })
-        }
-        if (video.url) {
-          await downloadVideo(video.url, path, video.format)
-        } else {
-          await downloadImages(imageList, path)
-        }
-        console.log('All resources downloaded successfully.')
-      } else {
-        console.log('Failed to retrieve resources')
-      }
-      return {
-        noteId,
-        title: noteDetail.note.title,
-        desc: noteDetail.note.desc,
-      }
-    } else {
-      console.log('Invalid HTML content.')
-    }
-  } else {
+  if (!longUrl) {
     console.log('Failed to get the long URL.')
+    return null
   }
 
-  return null
+  // 获取笔记id, 格式为/explore/{noteId}或/discovery/item/{noteId}, 使用正则进行匹配
+  const noteId = longUrl.match(/\/(explore|discovery\/item)\/([\d\w]+)/)?.[2]
+
+  if (!noteId) {
+    console.log('Failed to get the noteId.')
+    return null
+  }
+
+  const sourcePath = `${process.env.publicPath}/note/${noteId}`
+
+  const htmlContent = await getHtmlContent(longUrl)
+
+  if (!htmlContent) {
+    console.log('Failed to get HTML content.')
+    return null
+  }
+
+  const initialState = getInitialState(htmlContent)
+
+  if (!initialState) {
+    console.log('Failed to get initialState.')
+    return null
+  }
+
+  const {
+    title,
+    desc,
+    images,
+    video
+  } = getNoteDetail(initialState, noteId)
+
+  const videos: string[] = []
+  if (video.url) {
+    const videoDir = `${sourcePath}/video`
+    if (existsSync(videoDir)) {
+      /* 获取path下的第一个视频 */
+      const files = readdirSync(videoDir)
+      videos.push(...files.map(file => path.join(process.env.staticUrl || '', `note/${noteId}/video/${file}`)))
+    } else {
+      const file = await downloadVideo({
+        url: video.url,
+        dest: videoDir,
+        format: video.format,
+        compressOptions: {
+          resolution: 720
+        }
+      })
+      videos.push(path.join(process.env.staticUrl || '', `note/${noteId}/video/${file}`))
+    }
+  }
+
+  return {
+    noteId,
+    title,
+    desc,
+    images,
+    videos
+  }
 }
