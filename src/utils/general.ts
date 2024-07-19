@@ -1,9 +1,12 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import ffmpeg from 'fluent-ffmpeg'
+import ffmpegInstaller from '@ffmpeg-installer/ffmpeg'
 import axios from 'axios'
 import { ensureDirSync } from 'fs-extra'
 import tmp from 'tmp'
+
+ffmpeg.setFfmpegPath(ffmpegInstaller.path)
 
 export const getPromise = <T = any>() => {
   let res: any
@@ -27,55 +30,6 @@ export const parseCurlHeaders = (curlCommand: string): { [key: string]: string }
     headers[key] = value
   }
   return headers
-}
-
-/**
- * 根据常见的contentType，返回对应的文件后缀
- * 支持常见的视频和图片格式
- */
-export const getExtByContentType = (contentType: string): string => {
-  switch (contentType) {
-    case 'image/jpeg':
-      return 'jpg'
-    case 'image/png':
-      return 'png'
-    case 'image/gif':
-      return 'gif'
-    case 'image/webp':
-      return 'webp'
-    case 'video/mp4':
-      return 'mp4'
-    case 'video/mpeg':
-      return 'mpeg'
-    case 'video/quicktime':
-      return 'mov'
-    case 'application/octet-stream':
-      return 'mp4'
-    default:
-      return ''
-  }
-}
-
-/**
- * 根据常见的contentType，返回是否是图片还是视频
- * 图片返回image，视频返回video
- * 支持常见的视频和图片格式
- */
-export const getTypeByContentType = (contentType: string): string => {
-  switch (contentType) {
-    case 'image/jpeg':
-    case 'image/png':
-    case 'image/gif':
-    case 'image/webp':
-      return 'image'
-    case 'video/mp4':
-    case 'video/mpeg':
-    case 'video/quicktime':
-    case 'application/octet-stream':
-      return 'video'
-    default:
-      return ''
-  }
 }
 
 /* 下载视频 */
