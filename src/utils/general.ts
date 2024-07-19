@@ -1,9 +1,12 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import ffmpeg from 'fluent-ffmpeg'
+import ffmpegInstaller from '@ffmpeg-installer/ffmpeg'
 import axios from 'axios'
 import { ensureDirSync } from 'fs-extra'
 import tmp from 'tmp'
+
+ffmpeg.setFfmpegPath(ffmpegInstaller.path)
 
 export const getPromise = <T = any>() => {
   let res: any
