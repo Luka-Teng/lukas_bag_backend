@@ -29,6 +29,16 @@ export const parseCurlHeaders = (curlCommand: string): { [key: string]: string }
   return headers
 }
 
+/* 获取远程视频大小 */
+export const getRemoteVideoSize = (url: string)=> {
+  return fetch(url, {
+    "body": null,
+    "method": "HEAD"
+  }).then(async response => {
+    return parseInt(response.headers.get('content-length') || '0', 10)
+  })
+}
+
 /* 下载视频 */
 export const downloadVideo = async (options: {
   /* 视频远程地址 */
@@ -88,6 +98,7 @@ export const downloadVideo = async (options: {
         ffmpeg(tempFilePath)
           .outputOptions([
             `-vf scale=${resolutionMap[resolution] || '1280:720'}`,
+            '-threads 4'
             // '-crf 28',
             // '-preset slow'
           ])

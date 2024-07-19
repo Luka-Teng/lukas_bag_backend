@@ -1,8 +1,7 @@
 import axios from 'axios'
 import path from 'path'
-import { readdirSync, existsSync } from 'fs-extra'
 import config from './crawlConfig'
-import { downloadVideo, getQueryParams } from './general'
+import { getQueryParams, getRemoteVideoSize } from './general'
 
 // 请求短链获取重定向后的长链接
 const getLongUrl = async (shortUrl: string): Promise<string> => {
@@ -123,8 +122,6 @@ export const crawl = async (shortUrl: string) => {
     return null
   }
 
-  const sourcePath = `${process.env.publicPath}/note/${noteId}`
-
   const htmlContent = await getHtmlContent(longUrl)
 
   if (!htmlContent) {
@@ -146,30 +143,21 @@ export const crawl = async (shortUrl: string) => {
     video
   } = getNoteDetail(initialState, noteId)
 
-  const videos: string[] = []
+  const result: any = {
+    title,
+    desc,
+    images
+  }
+
   if (video.url) {
-    const videoDir = `${sourcePath}/video`
-    if (existsSync(videoDir)) {
-      const files = readdirSync(videoDir)
-      videos.push(...files.map(file => process.env.staticUrl + `/note/${noteId}/video/${file}`))
-    } else {
-      const file = await downloadVideo({
-        url: video.url,
-        dest: videoDir,
-        format: video.format,
-        compressOptions: {
-          resolution: 720
-        }
-      })
-      videos.push(process.env.staticUrl + `/note/${noteId}/video/${file}`)
+    const size = await getRemoteVideoSize(video.url)
+    result.video = {
+      url: video.url,
+      format: video.format,
+      size: `${size}`,
+      sizeUnit: 'bytes'
     }
   }
 
-  return {
-    noteId,
-    title,
-    desc,
-    images,
-    videos
-  }
+  return result
 }
