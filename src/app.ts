@@ -13,6 +13,12 @@ dotenv.config({ path: [`.env.${process.env.NODE_ENV}`, '.env'] })
 /* express实例 */
 const app = express()
 
+/* 终端输出log */
+app.use((req, _res, next) => {
+  logger.info(`${req.method} ${req.url}`)
+  next()
+})
+
 /* 处理静态资源 */
 app.use('/static', express.static('public'))
 
@@ -21,12 +27,6 @@ app.use(bodyParser.json())
 
 /* 处理api */
 app.use('/content', ContentController)
-
-/* 终端输出log */
-app.use((req, _res, next) => {
-  logger.info(`${req.method} ${req.url}`)
-  next()
-})
 
 /* 错误的统一处理 */
 app.use((err: any, req: any, res: any, _next: any) => {
