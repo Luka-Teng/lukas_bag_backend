@@ -1,12 +1,9 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import ffmpeg from 'fluent-ffmpeg'
-import ffmpegInstaller from '@ffmpeg-installer/ffmpeg'
 import axios from 'axios'
 import { ensureDirSync } from 'fs-extra'
 import tmp from 'tmp'
-
-ffmpeg.setFfmpegPath(ffmpegInstaller.path)
 
 export const getPromise = <T = any>() => {
   let res: any
@@ -91,8 +88,8 @@ export const downloadVideo = async (options: {
         ffmpeg(tempFilePath)
           .outputOptions([
             `-vf scale=${resolutionMap[resolution] || '1280:720'}`,
-            '-crf 28',
-            '-preset slow'
+            // '-crf 28',
+            // '-preset slow'
           ])
           .on('end', () => {
             tempFile.removeCallback()
