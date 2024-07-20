@@ -101,7 +101,6 @@ export const downloadVideo = async (options: {
         ffmpeg(tempFilePath)
           .outputOptions([
             `-vf scale=${resolutionMap[resolution] || '1280:720'}`,
-            '-threads 4'
             // '-crf 28',
             // '-preset slow'
           ])
