@@ -1,7 +1,6 @@
 import axios from 'axios'
-import path from 'path'
 import config from './crawlConfig'
-import { getQueryParams, getRemoteVideoSize } from './general'
+import { getQueryParams, getRemoteVideoSize, joinUrl } from './general'
 
 // 请求短链获取重定向后的长链接
 const getLongUrl = async (shortUrl: string): Promise<string> => {
@@ -89,7 +88,7 @@ const getNoteDetail = (initialState: Record<string, any>, noteId: string) => {
     
     const originVideoKey = noteInfo.note?.video?.consumer?.originVideoKey
     if (originVideoKey) {
-      noteDetail.video.url = path.join(process.env.redBookVideoHost || '', originVideoKey)
+      noteDetail.video.url = joinUrl(process.env.redBookVideoHost || '', originVideoKey)
       const stream = noteInfo.note?.video?.media?.stream || {}
       const streamInfo = Object.keys(stream)
         .map((key: string) => {
