@@ -1,4 +1,3 @@
-import fs from 'fs'
 import { extractShortLink } from '../utils/general'
 import { crawl } from '../utils/crawl'
 import { createError } from '../utils/error'
