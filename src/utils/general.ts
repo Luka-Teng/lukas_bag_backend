@@ -153,3 +153,8 @@ export const extractShortLink = (text: string) => {
 
   return match ? match[0] : null
 }
+
+/* 拼接url */
+export const joinUrl = (baseUrl: string, path: string) => {
+  return baseUrl.replace(/\/$/, '') + '/' + path.replace(/^\//, '')
+}
