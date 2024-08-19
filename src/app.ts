@@ -2,7 +2,9 @@
 import express from 'express'
 import 'express-async-errors'
 import bodyParser from 'body-parser'
+import { expressjwt, Request as JWTRequest } from 'express-jwt'
 import ContentController from './controller/content'
+import AuthController from './controller/auth'
 import logger from './logger'
 import dotenv from 'dotenv'
 import BizError from './error/BizError'
@@ -19,6 +21,17 @@ app.use((req, _res, next) => {
   next()
 })
 
+/* jwt校验 */
+app.use(expressjwt({
+  secret: process.env.JWT_SECRET as string,
+  algorithms: [process.env.JWT_ALGORITHM as any]
+}).unless({
+  path: ['/auth/login']
+}), (req: JWTRequest, _res, next) => {
+  req.user = req.auth?.data
+  next()
+})
+
 /* 处理静态资源 */
 app.use('/static', express.static('public'))
 
@@ -27,6 +40,7 @@ app.use(bodyParser.json())
 
 /* 处理api */
 app.use('/content', ContentController)
+app.use('/auth', AuthController)
 
 /* 错误的统一处理 */
 app.use((err: any, req: any, res: any, _next: any) => {
@@ -35,8 +49,12 @@ app.use((err: any, req: any, res: any, _next: any) => {
   err.method = req.method
   logger.error(err)
 
-  // 非业务错误
-  if (!(err instanceof BizError)) {
+  if (err.name === 'UnauthorizedError') {
+    // 鉴权错误
+    err.message = 'Unauthorized'
+    err.statusCode = 401
+  } else if (!(err instanceof BizError)) {
+    // 非业务错误
     err.message = 'Internal Server Error'
   }
 

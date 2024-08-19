@@ -1,6 +1,6 @@
 import { extractShortLink } from '../utils/general'
 import { crawl } from '../utils/crawl'
-import { createError } from '../utils/error'
+import { createError } from '../utils/response'
 
 export default class ContentService {
   async getNoteContent(text: string) {

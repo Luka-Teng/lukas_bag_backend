@@ -1,6 +1,6 @@
 /* content相关controllers */
 import express from 'express'
-import { createError, createResponse } from '../utils/error'
+import { createError, createResponse } from '../utils/response'
 import ContentService from '../service/contentService'
 
 const router = express.Router()
