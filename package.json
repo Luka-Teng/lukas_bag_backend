@@ -38,7 +38,6 @@
     "@types/fs-extra": "^11.0.4",
     "@types/tmp": "^0.2.6",
     "@types/winston": "^2.4.4",
-    "body-parser": "^1.20.2",
-    "rollup-plugin-terser": "^7.0.2"
+    "body-parser": "^1.20.2"
   }
 }
