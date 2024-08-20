@@ -1,5 +1,5 @@
-# 使用Node.js 16
-FROM node:16
+# 使用Node.js
+FROM node:18
 
 # 设置工作目录
 WORKDIR /usr/src/app
