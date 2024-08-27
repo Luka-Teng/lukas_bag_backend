@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export default class ContentService {
   async wechatCode2Session(code: string) {
-    const { data } = await axios.get(process.env.WECHAT_API_URL as string, {
+    const { data } = await axios.get(process.env.WECHAT_API_URL as string + '/sns/jscode2session', {
       params: {
         appid: process.env.WECHAT_APPID as string,
         secret: process.env.WECHAT_APP_SECRET as string,

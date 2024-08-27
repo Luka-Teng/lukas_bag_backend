@@ -11,8 +11,8 @@ const router = express.Router()
 
 const authService = new AuthService()
 
-router.get('/login', async (req, res) => {
-  const { email, password, loginType , code } = req.query
+router.post('/login', async (req, res) => {
+  const { email, password, loginType , code } = req.body
 
   let user: User | null = null
 
