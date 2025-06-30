@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { createError } from '../utils/response'
 
-export default class ContentService {
+export default class AuthService {
   async wechatCode2Session(code: string) {
     try {
       const { data } = await axios.get(
