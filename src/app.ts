@@ -5,6 +5,7 @@ import bodyParser from 'body-parser'
 import { expressjwt, Request as JWTRequest } from 'express-jwt'
 import ContentController from './controller/content'
 import AuthController from './controller/auth'
+import GameController from './controller/game'
 import logger from './logger'
 import dotenv from 'dotenv'
 import BizError from './error/BizError'
@@ -28,7 +29,7 @@ app.use(expressjwt({
 }).unless({
   path: ['/auth/login']
 }), (req: JWTRequest, _res, next) => {
-  req.user = req.auth?.data
+  (req as any).user = req.auth?.data
   next()
 })
 
@@ -41,6 +42,7 @@ app.use(bodyParser.json())
 /* 处理api */
 app.use('/content', ContentController)
 app.use('/auth', AuthController)
+app.use('/game', GameController)
 
 /* 错误的统一处理 */
 app.use((err: any, req: any, res: any, _next: any) => {

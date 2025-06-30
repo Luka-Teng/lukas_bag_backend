@@ -4,6 +4,8 @@
     "outDir": "./dist",
     // 目标 ECMAScript 版本，Node.js 支持的版本通常较新
     "target": "es2018",
+
+    "types": ["./src/types/extend.d.ts"],
     
     // 模块代码生成：CommonJS
     "module": "commonjs",

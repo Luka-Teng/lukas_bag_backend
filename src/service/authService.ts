@@ -8,15 +8,15 @@ export default class ContentService {
         process.env.WECHAT_API_URL as string + '/sns/jscode2session', {
         params: {
           appid: process.env.WECHAT_APPID as string,
-          secret: process.env.WECHAT_APP_SECRET as string,
+          secret: process.env.WECHAT_SECRET as string,
           js_code: code,
           grant_type: 'authorization_code'
         }
       })
   
       const { errcode, openid } = data
-  
-      if (errcode !== 0) {
+
+      if (errcode) {
         throw createError(`获取微信授权失败: ${errcode}`)
       }
   

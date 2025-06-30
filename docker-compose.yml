@@ -1,13 +1,13 @@
 version: '3'
 services:
-  red_book_scripts:
+  lukas_bag:
     build: .
     ports:
       - "3000:3000"
     networks:
       - app-network
     volumes:
-      - ~/logs/red_book_scripts:/usr/src/app/logs:rw 
+      - ~/logs/lukas_bag:/usr/src/app/logs:rw 
 
   nginx:
     image: nginx:latest
@@ -22,7 +22,7 @@ services:
       - ~/.ssl/lukas-bag.online.key:/etc/nginx/lukas-bag.online.key:ro
       - ~/logs/nginx:/var/log/nginx:rw 
     depends_on:
-      - red_book_scripts
+      - lukas_bag
 
 networks:
   app-network:

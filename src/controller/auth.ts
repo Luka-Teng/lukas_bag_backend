@@ -3,7 +3,6 @@ import jwt from 'jsonwebtoken'
 import { PrismaClient, User } from '@prisma/client'
 import { createResponse, createError } from '../utils/response'
 import AuthService from '../service/authService'
-import { validatePassword } from '../utils/encrypt'
 
 const prisma = new PrismaClient()
 
@@ -12,45 +11,30 @@ const router = express.Router()
 const authService = new AuthService()
 
 router.post('/login', async (req, res) => {
-  const { email, password, loginType , code } = req.body
+  const { code } = req.body
 
   let user: User | null = null
 
-  if (loginType === 'password') {
-    if (!email || !password) {
-      throw createError('email and password are required')
-    }
-
-    /* 获取用户 */
-    user = await prisma.user.findUnique({
-      where: {
-        email: email as string
-      }
-    })
-
-    /* 验证密码 */
-    if (user && user.password && await validatePassword(password as string, user.password)) {
-      throw createError('email or password is wrong')
-    }
+  if (!code) {
+    throw createError('code is required')
   }
 
-  if (loginType === 'wechat') {
-    if (!code) {
-      throw createError('code is required')
+  const openid = await authService.wechatCode2Session(code as string)
+
+  // 获取用户
+  user = await prisma.user.findUnique({
+    where: {
+      openid: openid
     }
+  })
 
-    const openid = await authService.wechatCode2Session(code as string)
-
-    /* 获取用户 */
-    user = await prisma.user.findUnique({
-      where: {
-        openId: openid
-      }
-    })
-  }
-
+  // 如果用户不存在，创建用户
   if (!user) {
-    throw createError('user not found')
+    user = await prisma.user.create({
+      data: {
+        openid
+      }
+    })
   }
 
   res.json(createResponse({

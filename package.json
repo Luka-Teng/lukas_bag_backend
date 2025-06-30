@@ -1,11 +1,11 @@
 {
-  "name": "red-book-scripts",
+  "name": "lukas_bag",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node ./dist/app.js"
+    "start": "nodemon src/app.ts"
   },
   "keywords": [],
   "author": "",
@@ -26,9 +26,9 @@
     "jsonwebtoken": "^9.0.2",
     "prisma": "^5.18.0",
     "tmp": "^0.2.3",
-    "typescript": "^5.4.5",
     "winston": "^3.13.0",
-    "winston-daily-rotate-file": "^5.0.0"
+    "winston-daily-rotate-file": "^5.0.0",
+    "ws": "^8.18.2"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
@@ -38,6 +38,10 @@
     "@types/fs-extra": "^11.0.4",
     "@types/tmp": "^0.2.6",
     "@types/winston": "^2.4.4",
-    "body-parser": "^1.20.2"
+    "@types/ws": "^8.18.1",
+    "body-parser": "^1.20.2",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
