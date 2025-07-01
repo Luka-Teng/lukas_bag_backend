@@ -22,7 +22,7 @@ EXPOSE 3000
 ENV NODE_ENV production
 
 # 编译ts
-RUN npm run build & npx prisma migrate dev
+RUN npx prisma migrate dev
 
 # 启动pm2
 CMD ["pm2", "start", "--no-daemon"]
