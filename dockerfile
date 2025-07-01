@@ -20,6 +20,7 @@ EXPOSE 3000
 
 # 定义环境变量
 ENV NODE_ENV production
+ENV DATABASE_URL postgresql://postgres:Lukario123@172.17.0.1:5432/lukas_bag?schema=public
 
 # 编译ts
 RUN npx prisma migrate dev
