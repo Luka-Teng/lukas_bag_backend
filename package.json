@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "nodemon src/app.ts"
+    "start": "NODE_ENV=production nodemon src/app.ts"
   },
   "keywords": [],
   "author": "",

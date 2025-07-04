@@ -1,4 +1,5 @@
 /* express服务入口 */
+import path from 'path'
 import express from 'express'
 import 'express-async-errors'
 import bodyParser from 'body-parser'
@@ -11,7 +12,10 @@ import dotenv from 'dotenv'
 import BizError from './error/BizError'
 
 /* 配置环境变量 */
-dotenv.config({ path: [`.env.${process.env.NODE_ENV}`, '.env'] })
+const envPath = process.env.NODE_ENV 
+  ? path.resolve(process.cwd(), `.env.${process.env.NODE_ENV}`) 
+  : path.resolve(process.cwd(), '.env')
+dotenv.config({ path: envPath, override: true })
 
 /* express实例 */
 const app = express()
